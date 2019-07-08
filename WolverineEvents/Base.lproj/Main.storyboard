@@ -10,11 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="gGx-m2-PDL">
             <objects>
-                <viewController id="hVP-bm-1sS" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="C5u-mn-3V4" customClass="LoginViewContoller">
+                <viewController id="hVP-bm-1sS" customClass="LoginViewController" customModule="WolverineEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C5u-mn-3V4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -50,24 +50,28 @@
                                 <rect key="frame" x="173" y="683" width="69" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Make One"/>
+                                <connections>
+                                    <action selector="MakeAccountButtonPressed:" destination="hVP-bm-1sS" eventType="touchUpInside" id="e2t-IX-4uO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peH-qM-5eF">
                                 <rect key="frame" x="184" y="479" width="47" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
-                                    <action selector="LoginButtonPressed:" destination="C5u-mn-3V4" eventType="touchUpInside" id="BHm-RO-s4W"/>
+                                    <action selector="SignInButtonPressed:" destination="hVP-bm-1sS" eventType="touchUpInside" id="FIF-8J-V3T"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="FMe-E9-X4H"/>
-                        <connections>
-                            <outlet property="LoginButton" destination="peH-qM-5eF" id="Ail-TR-23C"/>
-                            <outlet property="Password" destination="qZu-8O-pF4" id="Bjc-lO-7Yg"/>
-                            <outlet property="Username" destination="9oS-8c-ZRh" id="umw-Y6-02E"/>
-                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="MakeAccountButton" destination="WDr-0j-y1L" id="QGf-va-HdP"/>
+                        <outlet property="PasswordField" destination="qZu-8O-pF4" id="758-ex-tFw"/>
+                        <outlet property="SignInButton" destination="peH-qM-5eF" id="fFa-PT-zGE"/>
+                        <outlet property="UsernameField" destination="9oS-8c-ZRh" id="jbJ-39-cRl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQK-JG-e3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
