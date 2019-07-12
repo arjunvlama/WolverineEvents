@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AAECE6F922D44C06008F98FF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AAECE6F822D44C06008F98FF /* libsqlite3.tbd */; };
+		AAECE6FC22D45620008F98FF /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AAECE6FB22D45620008F98FF /* DBManager.m */; };
 		AAEFEC7022C3377E00344CCB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEFEC6F22C3377E00344CCB /* LoginViewController.swift */; };
 		AAF0365022BF4C92007D0CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF0364F22BF4C92007D0CE2 /* AppDelegate.swift */; };
 		AAF0365222BF4C92007D0CE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF0365122BF4C92007D0CE2 /* ViewController.swift */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AAECE6F822D44C06008F98FF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		AAECE6FA22D45620008F98FF /* WolverineEvents-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WolverineEvents-Bridging-Header.h"; sourceTree = "<group>"; };
+		AAECE6FB22D45620008F98FF /* DBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		AAECE6FD22D4574A008F98FF /* DBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		AAEFEC6F22C3377E00344CCB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AAF0364C22BF4C92007D0CE2 /* WolverineEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WolverineEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF0364F22BF4C92007D0CE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAECE6F922D44C06008F98FF /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,13 +83,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AAECE6F722D44C05008F98FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AAECE6F822D44C06008F98FF /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AAF0364322BF4C92007D0CE2 = {
 			isa = PBXGroup;
 			children = (
+				AAECE6FB22D45620008F98FF /* DBManager.m */,
 				AAF0364E22BF4C92007D0CE2 /* WolverineEvents */,
 				AAF0366322BF4C97007D0CE2 /* WolverineEventsTests */,
 				AAF0366E22BF4C97007D0CE2 /* WolverineEventsUITests */,
 				AAF0364D22BF4C92007D0CE2 /* Products */,
+				AAECE6F722D44C05008F98FF /* Frameworks */,
+				AAECE6FA22D45620008F98FF /* WolverineEvents-Bridging-Header.h */,
+				AAECE6FD22D4574A008F98FF /* DBManager.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,6 +215,7 @@
 				TargetAttributes = {
 					AAF0364B22BF4C92007D0CE2 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					AAF0365F22BF4C97007D0CE2 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -262,6 +282,7 @@
 				AAEFEC7022C3377E00344CCB /* LoginViewController.swift in Sources */,
 				AAF0365222BF4C92007D0CE2 /* ViewController.swift in Sources */,
 				AAF0365022BF4C92007D0CE2 /* AppDelegate.swift in Sources */,
+				AAECE6FC22D45620008F98FF /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +457,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WolverineEvents/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -444,6 +466,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = LamaCo.WolverineEvents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WolverineEvents-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -453,6 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WolverineEvents/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -461,6 +486,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = LamaCo.WolverineEvents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WolverineEvents-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
