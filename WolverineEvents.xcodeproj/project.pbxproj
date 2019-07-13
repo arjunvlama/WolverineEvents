@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA80542522D9DAE800B47B05 /* sampledb.sql in Resources */ = {isa = PBXBuildFile; fileRef = AA80542422D9DAE800B47B05 /* sampledb.sql */; };
 		AAECE6F922D44C06008F98FF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AAECE6F822D44C06008F98FF /* libsqlite3.tbd */; };
 		AAECE6FC22D45620008F98FF /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AAECE6FB22D45620008F98FF /* DBManager.m */; };
 		AAEFEC7022C3377E00344CCB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEFEC6F22C3377E00344CCB /* LoginViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA80542422D9DAE800B47B05 /* sampledb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = sampledb.sql; sourceTree = "<group>"; };
 		AAECE6F822D44C06008F98FF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		AAECE6FA22D45620008F98FF /* WolverineEvents-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WolverineEvents-Bridging-Header.h"; sourceTree = "<group>"; };
 		AAECE6FB22D45620008F98FF /* DBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				AAECE6FB22D45620008F98FF /* DBManager.m */,
+				AA80542422D9DAE800B47B05 /* sampledb.sql */,
 				AAF0364E22BF4C92007D0CE2 /* WolverineEvents */,
 				AAF0366322BF4C97007D0CE2 /* WolverineEventsTests */,
 				AAF0366E22BF4C97007D0CE2 /* WolverineEventsUITests */,
@@ -254,6 +257,7 @@
 			files = (
 				AAF0365A22BF4C96007D0CE2 /* LaunchScreen.storyboard in Resources */,
 				AAF0365722BF4C96007D0CE2 /* Assets.xcassets in Resources */,
+				AA80542522D9DAE800B47B05 /* sampledb.sql in Resources */,
 				AAF0365522BF4C92007D0CE2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
