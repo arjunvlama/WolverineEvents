@@ -42,7 +42,7 @@
     }
     self.arrColumnNames = [[NSMutableArray alloc] init];
     
-    BOOL openDatabaseResult = sqlite3_open([databasePath UTF8String], &sqlite3Database);
+    int openDatabaseResult = sqlite3_open([databasePath UTF8String], &sqlite3Database);
     
     if (openDatabaseResult == SQLITE_OK) {
         sqlite3_stmt *compiledStatement;
@@ -67,8 +67,23 @@
                     }
                 }
             }
+            else {
+                int executeQueryResults = sqlite3_step(compiledStatement);
+                if (executeQueryResults == SQLITE_DONE) {
+                    self.affectedRows = sqlite3_changes(sqlite3Database);
+                    self.lastInsertedRowID = sqlite3_last_insert_rowid(sqlite3Database);
+                }
+                else {
+                    NSLog(@"DB Error: %s",sqlite3_errmsg(sqlite3Database));
+                }
+            }
         }
+        else {
+            NSLog(@"%s", sqlite3_errmsg(sqlite3Database));
+        }
+        sqlite3_finalize(compiledStatement);
     }
+    sqlite3_close(sqlite3Database);
 }
 
 
@@ -99,6 +114,12 @@
     }
     return self;
 }
+-(NSArray *)loadDataFromDB:(NSString *)query{
+    [self runQuery:[query UTF8String] isQueryExecutable:NO];
+    return (NSArray*)self.arrResults;
+}
 
+-(void)executeQuery:(NSString *)query {
+    [self runQuery:[query UTF8String] isQueryExecutable:YES];
+}
 @end
-
