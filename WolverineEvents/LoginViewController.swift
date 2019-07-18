@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var UsernameField: UITextField!
@@ -29,6 +30,9 @@ class LoginViewController: UIViewController {
     
   
     @IBAction func MakeAccountButtonPressed(_ sender: Any) {
+        let db = DBManager.init(databaseFilename: "sampledb.sql");
+        let statement = "INSERT INTO User VALUES('mambalama24','area51')";
+        db!.executeQuery(statement);
     }
     
     /*

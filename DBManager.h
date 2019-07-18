@@ -9,9 +9,11 @@
 #ifndef DBManager_h
 #define DBManager_h
 
+#include <UIKit/UIKit.h>
+
 @interface DBManager : NSObject
 
--(instancetype)initWithDatabaseFilename:(NSString *)dbFilename;
+- (instancetype)initWithDatabaseFilename:(NSString *)dbFilename;
 
 @property (nonatomic, strong) NSMutableArray *arrColumnNames;
 @property (nonatomic) int affectedRows;
