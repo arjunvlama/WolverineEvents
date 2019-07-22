@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import CryptoSwift
 
-
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var UsernameField: UITextField!
     
@@ -21,11 +21,17 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.dismissKey()
+        self.UsernameField.delegate = self
+        self.PasswordField.delegate = self
         // Do any additional setup after loading the view.
     }
     
     @IBAction func SignInButtonPressed(_ sender: Any) {
+        let username = self.UsernameField.text
+        let password = self.PasswordField.text
+        
+        
     }
     
   
@@ -33,8 +39,16 @@ class LoginViewController: UIViewController {
         let db = DBManager.init(databaseFilename: "sampledb.sql");
         let statement = "INSERT INTO User VALUES('mambalama24','area51')";
         db!.executeQuery(statement);
+        let getInfo = "SELECT * FROM User";
+        let data = db!.loadData(fromDB: getInfo);
+        dump(data);
     }
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     /*
     // MARK: - Navigation
 
