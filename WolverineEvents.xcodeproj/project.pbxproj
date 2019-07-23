@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA64B17222E6DE8100666A2F /* CryptoSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = AA64B17122E6DE8100666A2F /* CryptoSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA80542522D9DAE800B47B05 /* sampledb.sql in Resources */ = {isa = PBXBuildFile; fileRef = AA80542422D9DAE800B47B05 /* sampledb.sql */; };
+		AADDA1C722E6DD32005B541D /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; fileRef = AADDA1C622E6DD32005B541D /* CryptoSwift */; };
 		AAECE6F922D44C06008F98FF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AAECE6F822D44C06008F98FF /* libsqlite3.tbd */; };
 		AAECE6FC22D45620008F98FF /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AAECE6FB22D45620008F98FF /* DBManager.m */; };
 		AAEFEC7022C3377E00344CCB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEFEC6F22C3377E00344CCB /* LoginViewController.swift */; };
@@ -21,6 +23,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AA20666A22E5919500A30D15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA20666222E5919500A30D15 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 754BE45519693E190098E6F3;
+			remoteInfo = CryptoSwift;
+		};
+		AA20666C22E5919500A30D15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA20666222E5919500A30D15 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 75211F92207249D8004E41F8;
+			remoteInfo = "CryptoSwift-TestHostApp";
+		};
+		AA20666E22E5919500A30D15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA20666222E5919500A30D15 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 754BE46019693E190098E6F3;
+			remoteInfo = Tests;
+		};
+		AA20667022E5919500A30D15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA20666222E5919500A30D15 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7595C14A2072E48C00EA1A5F;
+			remoteInfo = "TestsPerformance-Mac";
+		};
+		AA20667222E5919500A30D15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA20666222E5919500A30D15 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7564F0602072EAEB00CA5A96;
+			remoteInfo = "TestsPerformance-iOS";
+		};
+		AA20667522E591A300A30D15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA20666222E5919500A30D15 /* CryptoSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 754BE45419693E190098E6F3;
+			remoteInfo = CryptoSwift;
+		};
 		AAF0366122BF4C97007D0CE2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AAF0364422BF4C92007D0CE2 /* Project object */;
@@ -38,7 +82,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA20666222E5919500A30D15 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = WolverineEvents/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
+		AA64B17122E6DE8100666A2F /* CryptoSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoSwift.h; sourceTree = "<group>"; };
 		AA80542422D9DAE800B47B05 /* sampledb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = sampledb.sql; sourceTree = "<group>"; };
+		AADDA1C222E6DAF4005B541D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = WolverineEvents/CryptoSwift/README.md; sourceTree = "<group>"; };
+		AADDA1C422E6DD24005B541D /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../CryptoSwift/config; sourceTree = "<group>"; };
+		AADDA1C622E6DD32005B541D /* CryptoSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CryptoSwift; path = ../CryptoSwift; sourceTree = "<group>"; };
 		AAECE6F822D44C06008F98FF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		AAECE6FA22D45620008F98FF /* WolverineEvents-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WolverineEvents-Bridging-Header.h"; sourceTree = "<group>"; };
 		AAECE6FB22D45620008F98FF /* DBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
@@ -72,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AADDA1C722E6DD32005B541D /* CryptoSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,9 +135,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA20666322E5919500A30D15 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA20666B22E5919500A30D15 /* CryptoSwift.framework */,
+				AA20666D22E5919500A30D15 /* CryptoSwift-TestHostApp.app */,
+				AA20666F22E5919500A30D15 /* Tests.xctest */,
+				AA20667122E5919500A30D15 /* TestsPerformance-Mac.xctest */,
+				AA20667322E5919500A30D15 /* TestsPerformance-iOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		AAECE6F722D44C05008F98FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AADDA1C622E6DD32005B541D /* CryptoSwift */,
+				AADDA1C422E6DD24005B541D /* config */,
+				AADDA1C222E6DAF4005B541D /* README.md */,
+				AA20666222E5919500A30D15 /* CryptoSwift.xcodeproj */,
 				AAECE6F822D44C06008F98FF /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
@@ -96,6 +162,7 @@
 		AAF0364322BF4C92007D0CE2 = {
 			isa = PBXGroup;
 			children = (
+				AA64B17122E6DE8100666A2F /* CryptoSwift.h */,
 				AAECE6FB22D45620008F98FF /* DBManager.m */,
 				AA80542422D9DAE800B47B05 /* sampledb.sql */,
 				AAF0364E22BF4C92007D0CE2 /* WolverineEvents */,
@@ -152,6 +219,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		AA20667722E591F300A30D15 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA64B17222E6DE8100666A2F /* CryptoSwift.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		AAF0364B22BF4C92007D0CE2 /* WolverineEvents */ = {
 			isa = PBXNativeTarget;
@@ -174,6 +252,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAF0367722BF4C97007D0CE2 /* Build configuration list for PBXNativeTarget "WolverineEventsTests" */;
 			buildPhases = (
+				AA20667722E591F300A30D15 /* Headers */,
 				AAF0365C22BF4C97007D0CE2 /* Sources */,
 				AAF0365D22BF4C97007D0CE2 /* Frameworks */,
 				AAF0365E22BF4C97007D0CE2 /* Resources */,
@@ -181,6 +260,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				AA20667622E591A300A30D15 /* PBXTargetDependency */,
 				AAF0366222BF4C97007D0CE2 /* PBXTargetDependency */,
 			);
 			name = WolverineEventsTests;
@@ -241,6 +321,12 @@
 			mainGroup = AAF0364322BF4C92007D0CE2;
 			productRefGroup = AAF0364D22BF4C92007D0CE2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AA20666322E5919500A30D15 /* Products */;
+					ProjectRef = AA20666222E5919500A30D15 /* CryptoSwift.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AAF0364B22BF4C92007D0CE2 /* WolverineEvents */,
@@ -249,6 +335,49 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AA20666B22E5919500A30D15 /* CryptoSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = CryptoSwift.framework;
+			path = .framework;
+			remoteRef = AA20666A22E5919500A30D15 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA20666D22E5919500A30D15 /* CryptoSwift-TestHostApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			name = "CryptoSwift-TestHostApp.app";
+			path = .app;
+			remoteRef = AA20666C22E5919500A30D15 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA20666F22E5919500A30D15 /* Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			name = Tests.xctest;
+			path = .xctest;
+			remoteRef = AA20666E22E5919500A30D15 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA20667122E5919500A30D15 /* TestsPerformance-Mac.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			name = "TestsPerformance-Mac.xctest";
+			path = .xctest;
+			remoteRef = AA20667022E5919500A30D15 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA20667322E5919500A30D15 /* TestsPerformance-iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			name = "TestsPerformance-iOS.xctest";
+			path = .xctest;
+			remoteRef = AA20667222E5919500A30D15 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AAF0364A22BF4C92007D0CE2 /* Resources */ = {
@@ -309,6 +438,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AA20667622E591A300A30D15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CryptoSwift;
+			targetProxy = AA20667522E591A300A30D15 /* PBXContainerItemProxy */;
+		};
 		AAF0366222BF4C97007D0CE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AAF0364B22BF4C92007D0CE2 /* WolverineEvents */;

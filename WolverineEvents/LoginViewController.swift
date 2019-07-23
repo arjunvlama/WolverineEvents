@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CryptoSwift
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -30,7 +29,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func SignInButtonPressed(_ sender: Any) {
         let username = self.UsernameField.text
         let password = self.PasswordField.text
-        
+        let data = Data( [0x01, 0x02, 0x03])
         
     }
     
