@@ -27,10 +27,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func SignInButtonPressed(_ sender: Any) {
-        let username = self.UsernameField.text
-        let password = self.PasswordField.text
-        let data = Data( [0x01, 0x02, 0x03])
+        let username: String = self.UsernameField.text!;
+        let password: String = self.PasswordField.text!;
+    
+        let dataUsername = sha256(data: username.data(using: .utf8)!)
+        let dataPassword = sha256(data: password.data(using: .utf8)!)
+        //print("sha256 String: \(data.map { String(format: "%02hhx", $0) }.joined())")
+        var hashedPassword = String(data: dataPassword, encoding: .utf8)
         
+    }
+    
+    func sha256(data : Data) -> Data {
+        var hash = [UInt8](repeating: 0,  count: Int(CC_SHA256_DIGEST_LENGTH))
+        data.withUnsafeBytes {
+            _ = CC_SHA256($0.baseAddress, CC_LONG(data.count), &hash)
+        }
+        return Data(hash)
     }
     
   
@@ -38,9 +50,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let db = DBManager.init(databaseFilename: "sampledb.sql");
         let statement = "INSERT INTO User VALUES('mambalama24','area51')";
         db!.executeQuery(statement);
-        let getInfo = "SELECT * FROM User";
-        let data = db!.loadData(fromDB: getInfo);
-        dump(data);
     }
     
     

@@ -52,6 +52,7 @@
                                 <state key="normal" title="Make One"/>
                                 <connections>
                                     <action selector="MakeAccountButtonPressed:" destination="hVP-bm-1sS" eventType="touchUpInside" id="e2t-IX-4uO"/>
+                                    <segue destination="cmu-D8-f5M" kind="show" id="aWy-cW-W5V"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peH-qM-5eF">
@@ -103,20 +104,71 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="94.419642857142847"/>
         </scene>
-        <!--View Controller-->
+        <!--Make Account View Controller-->
         <scene sceneID="cyN-EZ-FJ7">
             <objects>
-                <viewController id="cmu-D8-f5M" sceneMemberID="viewController">
+                <viewController id="cmu-D8-f5M" customClass="MakeAccountViewController" customModule="WolverineEvents" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qc2-LK-Yyl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Make Account" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lB0-HS-CS3">
+                                <rect key="frame" x="151" y="160" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XNt-ed-Kaf" userLabel="Username Sign Up Field">
+                                <rect key="frame" x="76" y="275" width="263" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hQ4-PI-yvv">
+                                <rect key="frame" x="76" y="336" width="263" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfU-jI-zNx">
+                                <rect key="frame" x="180" y="592" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="MakeAccountButtonPressed:" destination="cmu-D8-f5M" eventType="touchUpInside" id="BZI-zQ-N95"/>
+                                    <action selector="SignInButtonPressed:" destination="hVP-bm-1sS" eventType="touchUpInside" id="L4F-Wo-yr1"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Club" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ONT-Nl-fJT">
+                                <rect key="frame" x="76" y="470" width="263" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Club Memberships:" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DTS-S8-m5U">
+                                <rect key="frame" x="76" y="417" width="147" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7mb-FK-S95"/>
                     </view>
+                    <connections>
+                        <outlet property="ClubMembershipField" destination="ONT-Nl-fJT" id="h0H-lc-o2U"/>
+                        <outlet property="PasswordSignUpField" destination="hQ4-PI-yvv" id="KMQ-i2-m60"/>
+                        <outlet property="UserNameSignUpField" destination="XNt-ed-Kaf" id="1Id-6H-YPo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDW-6b-Kq2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-477" y="106"/>
+            <point key="canvasLocation" x="-478.26086956521743" y="105.80357142857143"/>
         </scene>
     </scenes>
 </document>
