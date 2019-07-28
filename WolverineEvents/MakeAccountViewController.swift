@@ -28,6 +28,8 @@ class MakeAccountViewController: UIViewController, UITextFieldDelegate {
         
         let username: String = self.UserNameSignUpField.text!;
         let password: String = self.PasswordSignUpField.text!;
+        let club: String = self.ClubMembershipField.text!;
+        
         
         let dataPassword = sha256(data: password.data(using: .utf8)!)
         
@@ -62,11 +64,24 @@ class MakeAccountViewController: UIViewController, UITextFieldDelegate {
         let insertUsernamePassword = "INSERT INTO User VALUES('"
             + username + "','" + dbpassword + "')";
         
-        db!.executeQuery(insertUsernamePassword);
+        let insertClub =
+        "INSERT OR REPLACE INTO Club(name, members) " +
+             "VALUES('" + club + "', " +
+                "CASE WHEN EXISTS(SELECT * FROM Club WHERE name = '" + club + "') " +
+                    "THEN members + '" + username + "' " +
+                    "ELSE '" + username + "' END)";
         
-        let getInfo = "SELECT * FROM User";
-        let data = db!.loadData(fromDB: getInfo);
-        dump(data);
+        
+        db!.executeQuery(insertUsernamePassword);
+        db!.executeQuery(insertClub);
+        
+        
+        var getInfo = "SELECT * FROM User";
+        let userdata = db!.loadData(fromDB: getInfo);
+        dump(userdata);
+        getInfo = "SELECT * FROM Club";
+        let clubdata = db!.loadData(fromDB: getInfo);
+        dump(clubdata);
         
     }
     

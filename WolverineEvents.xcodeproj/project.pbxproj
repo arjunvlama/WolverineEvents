@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA64B17222E6DE8100666A2F /* CryptoSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = AA64B17122E6DE8100666A2F /* CryptoSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA80542522D9DAE800B47B05 /* sampledb.sql in Resources */ = {isa = PBXBuildFile; fileRef = AA80542422D9DAE800B47B05 /* sampledb.sql */; };
 		AAA4652622E9818A00AC0340 /* MakeAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA4652522E9818A00AC0340 /* MakeAccountViewController.swift */; };
 		AADDA1C722E6DD32005B541D /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; fileRef = AADDA1C622E6DD32005B541D /* CryptoSwift */; };
@@ -84,7 +83,6 @@
 
 /* Begin PBXFileReference section */
 		AA20666222E5919500A30D15 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = WolverineEvents/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
-		AA64B17122E6DE8100666A2F /* CryptoSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoSwift.h; sourceTree = "<group>"; };
 		AA80542422D9DAE800B47B05 /* sampledb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = sampledb.sql; sourceTree = "<group>"; };
 		AAA4652522E9818A00AC0340 /* MakeAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAccountViewController.swift; sourceTree = "<group>"; };
 		AADDA1C222E6DAF4005B541D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = WolverineEvents/CryptoSwift/README.md; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 		AAF0364322BF4C92007D0CE2 = {
 			isa = PBXGroup;
 			children = (
-				AA64B17122E6DE8100666A2F /* CryptoSwift.h */,
 				AAECE6FB22D45620008F98FF /* DBManager.m */,
 				AA80542422D9DAE800B47B05 /* sampledb.sql */,
 				AAF0364E22BF4C92007D0CE2 /* WolverineEvents */,
@@ -227,7 +224,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA64B17222E6DE8100666A2F /* CryptoSwift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
