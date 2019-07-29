@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA2DCBB422EECC3B00F20D44 /* clubdb.sql in Resources */ = {isa = PBXBuildFile; fileRef = AA2DCBB322EECC3A00F20D44 /* clubdb.sql */; };
 		AA80542522D9DAE800B47B05 /* sampledb.sql in Resources */ = {isa = PBXBuildFile; fileRef = AA80542422D9DAE800B47B05 /* sampledb.sql */; };
 		AAA4652622E9818A00AC0340 /* MakeAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA4652522E9818A00AC0340 /* MakeAccountViewController.swift */; };
 		AADDA1C722E6DD32005B541D /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; fileRef = AADDA1C622E6DD32005B541D /* CryptoSwift */; };
@@ -83,6 +84,7 @@
 
 /* Begin PBXFileReference section */
 		AA20666222E5919500A30D15 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = WolverineEvents/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
+		AA2DCBB322EECC3A00F20D44 /* clubdb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = clubdb.sql; sourceTree = "<group>"; };
 		AA80542422D9DAE800B47B05 /* sampledb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = sampledb.sql; sourceTree = "<group>"; };
 		AAA4652522E9818A00AC0340 /* MakeAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAccountViewController.swift; sourceTree = "<group>"; };
 		AADDA1C222E6DAF4005B541D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = WolverineEvents/CryptoSwift/README.md; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		AAF0364322BF4C92007D0CE2 = {
 			isa = PBXGroup;
 			children = (
+				AA2DCBB322EECC3A00F20D44 /* clubdb.sql */,
 				AAECE6FB22D45620008F98FF /* DBManager.m */,
 				AA80542422D9DAE800B47B05 /* sampledb.sql */,
 				AAF0364E22BF4C92007D0CE2 /* WolverineEvents */,
@@ -386,6 +389,7 @@
 				AAF0365A22BF4C96007D0CE2 /* LaunchScreen.storyboard in Resources */,
 				AAF0365722BF4C96007D0CE2 /* Assets.xcassets in Resources */,
 				AA80542522D9DAE800B47B05 /* sampledb.sql in Resources */,
+				AA2DCBB422EECC3B00F20D44 /* clubdb.sql in Resources */,
 				AAF0365522BF4C92007D0CE2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

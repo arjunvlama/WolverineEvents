@@ -12,11 +12,6 @@ import UIKit
 
 class MakeAccountViewController: UIViewController, UITextFieldDelegate {
 
-
-    
-    
-    
-    
    
     @IBOutlet weak var UserNameSignUpField: UITextField!
     
@@ -59,29 +54,23 @@ class MakeAccountViewController: UIViewController, UITextFieldDelegate {
         dbpassword.append("%");
         dbpassword.append(finalhash);
         
-        let db = DBManager.init(databaseFilename: "sampledb.sql");
+        let db = DBManager.init(databaseFilename: "clubdb.sql");
         
         let insertUsernamePassword = "INSERT INTO User VALUES('"
-            + username + "','" + dbpassword + "')";
-        
-        let insertClub =
-        "INSERT OR REPLACE INTO Club(name, members) " +
-             "VALUES('" + club + "', " +
-                "CASE WHEN EXISTS(SELECT * FROM Club WHERE name = '" + club + "') " +
-                    "THEN members + '" + username + "' " +
-                    "ELSE '" + username + "' END)";
+            + username + "','" + dbpassword + "','" + club + "')";
         
         
         db!.executeQuery(insertUsernamePassword);
-        db!.executeQuery(insertClub);
+        //db!.executeQuery(insertClub);
         
         
         var getInfo = "SELECT * FROM User";
+        //getInfo = "SELECT * FROM sqlite_master";
         let userdata = db!.loadData(fromDB: getInfo);
         dump(userdata);
-        getInfo = "SELECT * FROM Club";
-        let clubdata = db!.loadData(fromDB: getInfo);
-        dump(clubdata);
+        //getInfo = "SELECT * FROM Club";
+        //let clubdata = db!.loadData(fromDB: getInfo);
+        //dump(clubdata);
         
     }
     
