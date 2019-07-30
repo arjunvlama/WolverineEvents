@@ -35,14 +35,49 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         //print("sha256 String: \(data.map { String(format: "%02hhx", $0) }.joined())")
         var hashedPassword = String(data: dataPassword, encoding: .utf8)
         
+        
+        let db = DBManager.init(databaseFilename: "clubdb.sql");
+        let arr = db!.loadData(fromDB: "SELECT password FROM User WHERE username = '" + username + "'");
+        
+        dump(arr);
+        
+        let dbpassword = arr![0] as! NSString;
+        var numPercents = 0;
+        var actualdbpassword="";
+        var salt="";
+        var theFuckingLength = dbpassword.length;
+        var charArray: Array<Character> = Array(repeating: "?", count: theFuckingLength);
+        //for i in 0...theFuckingLength{
+          //  charArray[i] =
+        //}
+        dbpassword.getCharacters(charArray, range: NSRange)
+        
+        strncpy(charArray, dbpassword, UnsafeMutablePointer<Int8>);
+        for i in 0...theFuckingLength {
+            var letter = dbpassword[];
+            if letter == Character("%") {
+                numPercents+=1;
+            }
+            if numPercents==1{
+                salt+=String(letter);
+            }
+            if numPercents==2{
+                actualdbpassword+=String(letter);
+            }
+        }
+        
+        print(actualdbpassword);
+        
+        
+        
     }
     
     func sha256(data : Data) -> Data {
         var hash = [UInt8](repeating: 0,  count: Int(CC_SHA256_DIGEST_LENGTH))
         data.withUnsafeBytes {
-            _ = CC_SHA256($0.baseAddress, CC_LONG(data.count), &hash)
+            _ = CC_SHA256($0, CC_LONG(data.count), &hash)
         }
-        return Data(hash)
+        return Data(bytes: hash)
     }
     
   
