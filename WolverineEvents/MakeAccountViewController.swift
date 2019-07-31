@@ -50,27 +50,28 @@ class MakeAccountViewController: UIViewController, UITextFieldDelegate {
         
         dbpassword.append(salt);
         dbpassword.append("%");
-        dbpassword.append(hashedPassword);
-        dbpassword.append("%");
         dbpassword.append(finalhash);
         
         let db = DBManager.init(databaseFilename: "clubdb.sql");
+        
+        //let turnForeignKeyOn = "PRAGMA foreign_keys = ON";
         
         let insertUsernamePassword = "INSERT INTO User VALUES('"
             + username + "','" + dbpassword + "','" + club + "')";
         
         
+        //db!.executeQuery(turnForeignKeyOn);
         db!.executeQuery(insertUsernamePassword);
         //db!.executeQuery(insertClub);
         
         
-        var getInfo = "SELECT * FROM User";
-        //getInfo = "SELECT * FROM sqlite_master";
+        let getInfo = "SELECT * FROM User";
         let userdata = db!.loadData(fromDB: getInfo);
         dump(userdata);
+        //let foreignKeyCheck = "PRAGMA foreign_keys";
         //getInfo = "SELECT * FROM Club";
-        //let clubdata = db!.loadData(fromDB: getInfo);
-        //dump(clubdata);
+        //let check = db!.loadData(fromDB: foreignKeyCheck);
+        //dump(check);
         
     }
     

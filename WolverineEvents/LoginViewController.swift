@@ -27,13 +27,62 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func SignInButtonPressed(_ sender: Any) {
-        let username: String = self.UsernameField.text!;
-        let password: String = self.PasswordField.text!;
-    
-        let dataUsername = sha256(data: username.data(using: .utf8)!)
+        let username: String = self.UsernameField.text ?? "";
+        let password: String = self.PasswordField.text ?? "";
+        if (username.isEmpty || password.isEmpty) {
+            print("zero");
+            //exit func
+        }
+        
         let dataPassword = sha256(data: password.data(using: .utf8)!)
         //print("sha256 String: \(data.map { String(format: "%02hhx", $0) }.joined())")
-        var hashedPassword = String(data: dataPassword, encoding: .utf8)
+        let hashedPassword = dataPassword.base64EncodedString(options: []);
+        
+        let db = DBManager.init(databaseFilename: "clubdb.sql");
+        let storedPassword = db!.loadData(fromDB: "SELECT password FROM User WHERE username = '" + username + "'") as NSArray;
+        if (storedPassword == nil || storedPassword.count == 0) {
+            print("No User Exists");
+            //exit func
+        }
+        let result = (storedPassword.object(at: 0) as AnyObject).object(at: 0) as! NSString;
+        
+        let substrings = result.components(separatedBy: "%");
+        
+        let salt = substrings[1];
+        let hash = substrings[2];
+        
+        let hashToCheck = sha256(data: (salt + hashedPassword).data(using: .utf8)!)
+        if (hashToCheck.base64EncodedString(options:[]) == hash) {
+            print("Password matched");
+        }
+        else {
+            print("Password did not match")
+        }
+        //NSString *needle = [haystack componentsSeparatedByString:@":"][1];
+        //dump(storePassword);
+        /*let dbpassword = arr![0] as! String
+        var numPercents = 0;
+        var actualdbpassword="";
+        var salt="";
+        
+        let string: NSString = "Hello";
+        
+        let length = string.length;
+        
+        for letter in dbpassword {
+            if letter == Character("%") {
+                numPercents+=1;
+            }
+            if numPercents==1{
+                salt+=String(letter);
+            }
+            if numPercents==2{
+                actualdbpassword+=String(letter);
+            }
+        }
+        
+        print(actualdbpassword);*/
+        
         
     }
     
