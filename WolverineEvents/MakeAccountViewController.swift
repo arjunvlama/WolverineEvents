@@ -24,56 +24,46 @@ class MakeAccountViewController: UIViewController, UITextFieldDelegate {
         let username: String = self.UserNameSignUpField.text!;
         let password: String = self.PasswordSignUpField.text!;
         let club: String = self.ClubMembershipField.text!;
+        if (username.isEmpty || password.isEmpty || club.isEmpty) {
+            let alert = UIAlertController(title: "Username, Password, or Club Field Empty", message: "Please re-enter your Username, Password, or Club", preferredStyle: .alert);
+            alert.addAction(UIAlertAction(title: "Alright", style: .default, handler: nil));
+            self.present(alert, animated: true);
+            print("zero");
+        }
+        else {
+            storeInfo(username: username, password: password, club: club);
+        }
         
-        
+    }
+    
+    func storeInfo(username: String, password: String, club: String) {
         let dataPassword = sha256(data: password.data(using: .utf8)!)
-        
-        print("sha256 String: \(dataPassword.map { String(format: "%02hhx", $0) }.joined())")
-        
+        //print("sha256 String: \(dataPassword.map { String(format: "%02hhx", $0) }.joined())")
         let hashedPassword = dataPassword.base64EncodedString(options: [])
-        
-        //let hashedPassword = String(decoding: dataPassword, as: UTF8.self)
-        
         let salt = randomString(length: 5)
-        
         var hashtosalt = salt
-        
         hashtosalt.append(hashedPassword)
-        
         let saltedhash = sha256(data: hashtosalt.data(using: .utf8)!);
-        
         var dbpassword = "SHA256%";
-        
         let finalhash = saltedhash.base64EncodedString(options: [])
-        
         //let finalhash = String(decoding: saltedhash, as: UTF8.self)
-        
         dbpassword.append(salt);
         dbpassword.append("%");
         dbpassword.append(finalhash);
-        
         let db = DBManager.init(databaseFilename: "clubdb.sql");
-        
         //let turnForeignKeyOn = "PRAGMA foreign_keys = ON";
-        
         let insertUsernamePassword = "INSERT INTO User VALUES('"
             + username + "','" + dbpassword + "','" + club + "')";
-        
-        
+        //dump(insertUsernamePassword);
         //db!.executeQuery(turnForeignKeyOn);
         db!.executeQuery(insertUsernamePassword);
         //db!.executeQuery(insertClub);
-        
-        
         let getInfo = "SELECT * FROM User";
         let userdata = db!.loadData(fromDB: getInfo);
         dump(userdata);
-        //let foreignKeyCheck = "PRAGMA foreign_keys";
-        //getInfo = "SELECT * FROM Club";
-        //let check = db!.loadData(fromDB: foreignKeyCheck);
-        //dump(check);
-        
     }
+    
+    
     
     func randomString(length: Int) -> String {
         let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"

@@ -29,9 +29,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func SignInButtonPressed(_ sender: Any) {
         let username: String = self.UsernameField.text ?? "";
         let password: String = self.PasswordField.text ?? "";
+        let didValidate = ValidateUser(username: username, password: password);
+        if didValidate {
+            LoginInfo.shareInstance.isLoggedIn = true
+            performSegue(withIdentifier: "LogintoEvent", sender: nil)
+        }
+    }
+    
+    func ValidateUser(username: String, password: String)->Bool {
         if (username.isEmpty || password.isEmpty) {
+            let alert = UIAlertController(title: "Username or Password Field Empty", message: "Please re-enter your Username or Password", preferredStyle: .alert);
+            alert.addAction(UIAlertAction(title: "Alright", style: .default, handler: nil));
+            self.present(alert, animated: true);
             print("zero");
-            //exit func
+            return false;
         }
         
         let dataPassword = sha256(data: password.data(using: .utf8)!)
@@ -42,7 +53,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let storedPassword = db!.loadData(fromDB: "SELECT password FROM User WHERE username = '" + username + "'") as NSArray;
         if (storedPassword == nil || storedPassword.count == 0) {
             print("No User Exists");
-            //exit func
+            let alert = UIAlertController(title: "Username or Password Incorrect", message: "Try Again", preferredStyle: .alert);
+            alert.addAction(UIAlertAction(title: "Alright", style: .default, handler: nil));
+            self.present(alert, animated: true);
+            return false;
         }
         let result = (storedPassword.object(at: 0) as AnyObject).object(at: 0) as! NSString;
         
@@ -53,38 +67,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         let hashToCheck = sha256(data: (salt + hashedPassword).data(using: .utf8)!)
         if (hashToCheck.base64EncodedString(options:[]) == hash) {
-            print("Password matched");
+            return true;
         }
         else {
-            print("Password did not match")
+            print("Password Incorrect");
+            let alert = UIAlertController(title: "Username or Password Incorrect", message: "Try Again", preferredStyle: .alert);
+            alert.addAction(UIAlertAction(title: "Alright", style: .default, handler: nil));
+            self.present(alert, animated: true);
+            return false;
         }
-        //NSString *needle = [haystack componentsSeparatedByString:@":"][1];
-        //dump(storePassword);
-        /*let dbpassword = arr![0] as! String
-        var numPercents = 0;
-        var actualdbpassword="";
-        var salt="";
-        
-        let string: NSString = "Hello";
-        
-        let length = string.length;
-        
-        for letter in dbpassword {
-            if letter == Character("%") {
-                numPercents+=1;
-            }
-            if numPercents==1{
-                salt+=String(letter);
-            }
-            if numPercents==2{
-                actualdbpassword+=String(letter);
-            }
-        }
-        
-        print(actualdbpassword);*/
-        
         
     }
+    
     
     func sha256(data : Data) -> Data {
         var hash = [UInt8](repeating: 0,  count: Int(CC_SHA256_DIGEST_LENGTH))

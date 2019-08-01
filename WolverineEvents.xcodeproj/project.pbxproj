@@ -10,6 +10,7 @@
 		AA2DCBB422EECC3B00F20D44 /* clubdb.sql in Resources */ = {isa = PBXBuildFile; fileRef = AA2DCBB322EECC3A00F20D44 /* clubdb.sql */; };
 		AA80542522D9DAE800B47B05 /* sampledb.sql in Resources */ = {isa = PBXBuildFile; fileRef = AA80542422D9DAE800B47B05 /* sampledb.sql */; };
 		AAA4652622E9818A00AC0340 /* MakeAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA4652522E9818A00AC0340 /* MakeAccountViewController.swift */; };
+		AAB4475222F2C100001DE39C /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB4475122F2C100001DE39C /* CreateEventViewController.swift */; };
 		AADDA1C722E6DD32005B541D /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; fileRef = AADDA1C622E6DD32005B541D /* CryptoSwift */; };
 		AAECE6F922D44C06008F98FF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AAECE6F822D44C06008F98FF /* libsqlite3.tbd */; };
 		AAECE6FC22D45620008F98FF /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AAECE6FB22D45620008F98FF /* DBManager.m */; };
@@ -87,6 +88,7 @@
 		AA2DCBB322EECC3A00F20D44 /* clubdb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = clubdb.sql; sourceTree = "<group>"; };
 		AA80542422D9DAE800B47B05 /* sampledb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = sampledb.sql; sourceTree = "<group>"; };
 		AAA4652522E9818A00AC0340 /* MakeAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAccountViewController.swift; sourceTree = "<group>"; };
+		AAB4475122F2C100001DE39C /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		AADDA1C222E6DAF4005B541D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = WolverineEvents/CryptoSwift/README.md; sourceTree = "<group>"; };
 		AADDA1C422E6DD24005B541D /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../CryptoSwift/config; sourceTree = "<group>"; };
 		AADDA1C622E6DD32005B541D /* CryptoSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CryptoSwift; path = ../CryptoSwift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				AAF0365822BF4C96007D0CE2 /* LaunchScreen.storyboard */,
 				AAF0365B22BF4C96007D0CE2 /* Info.plist */,
 				AAA4652522E9818A00AC0340 /* MakeAccountViewController.swift */,
+				AAB4475122F2C100001DE39C /* CreateEventViewController.swift */,
 			);
 			path = WolverineEvents;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 			files = (
 				AAA4652622E9818A00AC0340 /* MakeAccountViewController.swift in Sources */,
 				AAEFEC7022C3377E00344CCB /* LoginViewController.swift in Sources */,
+				AAB4475222F2C100001DE39C /* CreateEventViewController.swift in Sources */,
 				AAF0365222BF4C92007D0CE2 /* ViewController.swift in Sources */,
 				AAF0365022BF4C92007D0CE2 /* AppDelegate.swift in Sources */,
 				AAECE6FC22D45620008F98FF /* DBManager.m in Sources */,
