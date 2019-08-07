@@ -3,13 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24F06CED0AC1F467867BFDF9 /* Pods_WolverineEventsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D11A29813540C9B4F404054 /* Pods_WolverineEventsTests.framework */; };
+		59ABFF0555CFF1EB968ACDAA /* Pods_WolverineEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDB86A792A4404F61AF2F3B /* Pods_WolverineEvents.framework */; };
+		80A9BA0A9D2F63B87249A994 /* Pods_WolverineEventsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1DD56E5D85CDC0EEF7D7A8 /* Pods_WolverineEventsUITests.framework */; };
 		AA2DCBB422EECC3B00F20D44 /* clubdb.sql in Resources */ = {isa = PBXBuildFile; fileRef = AA2DCBB322EECC3A00F20D44 /* clubdb.sql */; };
+		AA5522E222F7B9800095EA1F /* subscriptions.graphql in Resources */ = {isa = PBXBuildFile; fileRef = AA5522DF22F7B9800095EA1F /* subscriptions.graphql */; };
+		AA5522E322F7B9800095EA1F /* mutations.graphql in Resources */ = {isa = PBXBuildFile; fileRef = AA5522E022F7B9800095EA1F /* mutations.graphql */; };
+		AA5522E422F7B9800095EA1F /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = AA5522E122F7B9800095EA1F /* schema.json */; };
+		AA5522E622F7B9E90095EA1F /* queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = AA5522E522F7B9E90095EA1F /* queries.graphql */; };
+		AA62E23822F7A99A003188C1 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = AA62E23722F7A99A003188C1 /* awsconfiguration.json */; };
+		AA62E23A22F7AF22003188C1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62E23922F7AF22003188C1 /* API.swift */; };
 		AA80542522D9DAE800B47B05 /* sampledb.sql in Resources */ = {isa = PBXBuildFile; fileRef = AA80542422D9DAE800B47B05 /* sampledb.sql */; };
 		AAA4652622E9818A00AC0340 /* MakeAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA4652522E9818A00AC0340 /* MakeAccountViewController.swift */; };
+		AAA85DBC22FA8A4B00E12EFA /* schema.graphql in Resources */ = {isa = PBXBuildFile; fileRef = AAA85DBB22FA8A4B00E12EFA /* schema.graphql */; };
 		AAB4475222F2C100001DE39C /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB4475122F2C100001DE39C /* CreateEventViewController.swift */; };
 		AADDA1C722E6DD32005B541D /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; fileRef = AADDA1C622E6DD32005B541D /* CryptoSwift */; };
 		AAECE6F922D44C06008F98FF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AAECE6F822D44C06008F98FF /* libsqlite3.tbd */; };
@@ -84,10 +94,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		241B09F3CFC33A1F3F28E0E2 /* Pods-WolverineEventsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WolverineEventsUITests.release.xcconfig"; path = "Target Support Files/Pods-WolverineEventsUITests/Pods-WolverineEventsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2B1DD56E5D85CDC0EEF7D7A8 /* Pods_WolverineEventsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WolverineEventsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D11A29813540C9B4F404054 /* Pods_WolverineEventsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WolverineEventsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		416CE8EF8200AB910CB78618 /* Pods-WolverineEvents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WolverineEvents.release.xcconfig"; path = "Target Support Files/Pods-WolverineEvents/Pods-WolverineEvents.release.xcconfig"; sourceTree = "<group>"; };
+		4B5E10743F6850B83C79646A /* Pods-WolverineEventsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WolverineEventsTests.release.xcconfig"; path = "Target Support Files/Pods-WolverineEventsTests/Pods-WolverineEventsTests.release.xcconfig"; sourceTree = "<group>"; };
+		4BDB86A792A4404F61AF2F3B /* Pods_WolverineEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WolverineEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CDBE2D4BA9A822B069D0100 /* Pods-WolverineEvents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WolverineEvents.debug.xcconfig"; path = "Target Support Files/Pods-WolverineEvents/Pods-WolverineEvents.debug.xcconfig"; sourceTree = "<group>"; };
+		9DF046C94744DB2587103380 /* Pods-WolverineEventsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WolverineEventsUITests.debug.xcconfig"; path = "Target Support Files/Pods-WolverineEventsUITests/Pods-WolverineEventsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA20666222E5919500A30D15 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = WolverineEvents/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
 		AA2DCBB322EECC3A00F20D44 /* clubdb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = clubdb.sql; sourceTree = "<group>"; };
+		AA5522DF22F7B9800095EA1F /* subscriptions.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = subscriptions.graphql; sourceTree = "<group>"; };
+		AA5522E022F7B9800095EA1F /* mutations.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mutations.graphql; sourceTree = "<group>"; };
+		AA5522E122F7B9800095EA1F /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		AA5522E522F7B9E90095EA1F /* queries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = queries.graphql; sourceTree = SOURCE_ROOT; };
+		AA62E23722F7A99A003188C1 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		AA62E23922F7AF22003188C1 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		AA80542422D9DAE800B47B05 /* sampledb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = sampledb.sql; sourceTree = "<group>"; };
 		AAA4652522E9818A00AC0340 /* MakeAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAccountViewController.swift; sourceTree = "<group>"; };
+		AAA85DBB22FA8A4B00E12EFA /* schema.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = schema.graphql; path = amplify/backend/api/arjungraphapi/schema.graphql; sourceTree = SOURCE_ROOT; };
 		AAB4475122F2C100001DE39C /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		AADDA1C222E6DAF4005B541D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = WolverineEvents/CryptoSwift/README.md; sourceTree = "<group>"; };
 		AADDA1C422E6DD24005B541D /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../CryptoSwift/config; sourceTree = "<group>"; };
@@ -110,6 +135,7 @@
 		AAF0366B22BF4C97007D0CE2 /* WolverineEventsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WolverineEventsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF0366F22BF4C97007D0CE2 /* WolverineEventsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolverineEventsUITests.swift; sourceTree = "<group>"; };
 		AAF0367122BF4C97007D0CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1EBBFC8266A243196B1DA6C /* Pods-WolverineEventsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WolverineEventsTests.debug.xcconfig"; path = "Target Support Files/Pods-WolverineEventsTests/Pods-WolverineEventsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAECE6F922D44C06008F98FF /* libsqlite3.tbd in Frameworks */,
+				59ABFF0555CFF1EB968ACDAA /* Pods_WolverineEvents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AADDA1C722E6DD32005B541D /* CryptoSwift in Frameworks */,
+				24F06CED0AC1F467867BFDF9 /* Pods_WolverineEventsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80A9BA0A9D2F63B87249A994 /* Pods_WolverineEventsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +180,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		AA5522DE22F7B9800095EA1F /* graphql */ = {
+			isa = PBXGroup;
+			children = (
+				AA5522DF22F7B9800095EA1F /* subscriptions.graphql */,
+				AA5522E022F7B9800095EA1F /* mutations.graphql */,
+				AA5522E522F7B9E90095EA1F /* queries.graphql */,
+				AA5522E122F7B9800095EA1F /* schema.json */,
+				AAA85DBB22FA8A4B00E12EFA /* schema.graphql */,
+			);
+			path = graphql;
+			sourceTree = "<group>";
+		};
 		AAECE6F722D44C05008F98FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +200,9 @@
 				AADDA1C222E6DAF4005B541D /* README.md */,
 				AA20666222E5919500A30D15 /* CryptoSwift.xcodeproj */,
 				AAECE6F822D44C06008F98FF /* libsqlite3.tbd */,
+				4BDB86A792A4404F61AF2F3B /* Pods_WolverineEvents.framework */,
+				2D11A29813540C9B4F404054 /* Pods_WolverineEventsTests.framework */,
+				2B1DD56E5D85CDC0EEF7D7A8 /* Pods_WolverineEventsUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -166,6 +210,9 @@
 		AAF0364322BF4C92007D0CE2 = {
 			isa = PBXGroup;
 			children = (
+				AA62E23922F7AF22003188C1 /* API.swift */,
+				AA5522DE22F7B9800095EA1F /* graphql */,
+				AA62E23722F7A99A003188C1 /* awsconfiguration.json */,
 				AA2DCBB322EECC3A00F20D44 /* clubdb.sql */,
 				AAECE6FB22D45620008F98FF /* DBManager.m */,
 				AA80542422D9DAE800B47B05 /* sampledb.sql */,
@@ -176,6 +223,7 @@
 				AAECE6F722D44C05008F98FF /* Frameworks */,
 				AAECE6FA22D45620008F98FF /* WolverineEvents-Bridging-Header.h */,
 				AAECE6FD22D4574A008F98FF /* DBManager.h */,
+				EFF96CD0B950E3F09B22559C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -223,6 +271,19 @@
 			path = WolverineEventsUITests;
 			sourceTree = "<group>";
 		};
+		EFF96CD0B950E3F09B22559C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CDBE2D4BA9A822B069D0100 /* Pods-WolverineEvents.debug.xcconfig */,
+				416CE8EF8200AB910CB78618 /* Pods-WolverineEvents.release.xcconfig */,
+				C1EBBFC8266A243196B1DA6C /* Pods-WolverineEventsTests.debug.xcconfig */,
+				4B5E10743F6850B83C79646A /* Pods-WolverineEventsTests.release.xcconfig */,
+				9DF046C94744DB2587103380 /* Pods-WolverineEventsUITests.debug.xcconfig */,
+				241B09F3CFC33A1F3F28E0E2 /* Pods-WolverineEventsUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -240,9 +301,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAF0367422BF4C97007D0CE2 /* Build configuration list for PBXNativeTarget "WolverineEvents" */;
 			buildPhases = (
+				91542AF8718C5F13163E44AF /* [CP] Check Pods Manifest.lock */,
 				AAF0364822BF4C92007D0CE2 /* Sources */,
 				AAF0364922BF4C92007D0CE2 /* Frameworks */,
 				AAF0364A22BF4C92007D0CE2 /* Resources */,
+				BFD34FBF66236C5D69DA2498 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,6 +320,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAF0367722BF4C97007D0CE2 /* Build configuration list for PBXNativeTarget "WolverineEventsTests" */;
 			buildPhases = (
+				955F051969E6A25716119781 /* [CP] Check Pods Manifest.lock */,
 				AA20667722E591F300A30D15 /* Headers */,
 				AAF0365C22BF4C97007D0CE2 /* Sources */,
 				AAF0365D22BF4C97007D0CE2 /* Frameworks */,
@@ -277,6 +341,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAF0367A22BF4C97007D0CE2 /* Build configuration list for PBXNativeTarget "WolverineEventsUITests" */;
 			buildPhases = (
+				D37F085C6C80C116C7186BAD /* [CP] Check Pods Manifest.lock */,
 				AAF0366722BF4C97007D0CE2 /* Sources */,
 				AAF0366822BF4C97007D0CE2 /* Frameworks */,
 				AAF0366922BF4C97007D0CE2 /* Resources */,
@@ -389,10 +454,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA5522E622F7B9E90095EA1F /* queries.graphql in Resources */,
 				AAF0365A22BF4C96007D0CE2 /* LaunchScreen.storyboard in Resources */,
+				AA5522E422F7B9800095EA1F /* schema.json in Resources */,
 				AAF0365722BF4C96007D0CE2 /* Assets.xcassets in Resources */,
+				AA5522E322F7B9800095EA1F /* mutations.graphql in Resources */,
+				AA62E23822F7A99A003188C1 /* awsconfiguration.json in Resources */,
 				AA80542522D9DAE800B47B05 /* sampledb.sql in Resources */,
+				AA5522E222F7B9800095EA1F /* subscriptions.graphql in Resources */,
 				AA2DCBB422EECC3B00F20D44 /* clubdb.sql in Resources */,
+				AAA85DBC22FA8A4B00E12EFA /* schema.graphql in Resources */,
 				AAF0365522BF4C92007D0CE2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +484,92 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		91542AF8718C5F13163E44AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WolverineEvents-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		955F051969E6A25716119781 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WolverineEventsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFD34FBF66236C5D69DA2498 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WolverineEvents/Pods-WolverineEvents-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WolverineEvents/Pods-WolverineEvents-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WolverineEvents/Pods-WolverineEvents-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D37F085C6C80C116C7186BAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WolverineEventsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AAF0364822BF4C92007D0CE2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -424,6 +581,7 @@
 				AAF0365222BF4C92007D0CE2 /* ViewController.swift in Sources */,
 				AAF0365022BF4C92007D0CE2 /* AppDelegate.swift in Sources */,
 				AAECE6FC22D45620008F98FF /* DBManager.m in Sources */,
+				AA62E23A22F7AF22003188C1 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +761,7 @@
 		};
 		AAF0367522BF4C97007D0CE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CDBE2D4BA9A822B069D0100 /* Pods-WolverineEvents.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -623,6 +782,7 @@
 		};
 		AAF0367622BF4C97007D0CE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 416CE8EF8200AB910CB78618 /* Pods-WolverineEvents.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -642,6 +802,7 @@
 		};
 		AAF0367822BF4C97007D0CE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1EBBFC8266A243196B1DA6C /* Pods-WolverineEventsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -662,6 +823,7 @@
 		};
 		AAF0367922BF4C97007D0CE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B5E10743F6850B83C79646A /* Pods-WolverineEventsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -682,6 +844,7 @@
 		};
 		AAF0367B22BF4C97007D0CE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DF046C94744DB2587103380 /* Pods-WolverineEventsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -701,6 +864,7 @@
 		};
 		AAF0367C22BF4C97007D0CE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 241B09F3CFC33A1F3F28E0E2 /* Pods-WolverineEventsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,454 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateBlog($input: CreateBlogInput!) {
+  createBlog(input: $input) {
+    id
+    name
+    posts {
+      items {
+        blog {
+          id
+          name
+          posts {
+            nextToken
+          }
+        }
+        comments {
+          items {
+            content
+            id
+          }
+          nextToken
+        }
+        id
+        title
+      }
+      nextToken
+    }
+  }
+}
+mutation CreateClub($input: CreateClubInput!) {
+  createClub(input: $input) {
+    Description
+    Open_Invite
+    events {
+      items {
+        End_Time
+        Start_Time
+        description
+        id
+        location
+      }
+    }
+    id
+    name
+    users
+  }
+}
+mutation CreateComment($input: CreateCommentInput!) {
+  createComment(input: $input) {
+    content
+    id
+    post {
+      blog {
+        id
+        name
+        posts {
+          items {
+            id
+            title
+          }
+          nextToken
+        }
+      }
+      comments {
+        items {
+          content
+          id
+          post {
+            id
+            title
+          }
+        }
+        nextToken
+      }
+      id
+      title
+    }
+  }
+}
+mutation CreateEvent($input: CreateEventInput!) {
+  createEvent(input: $input) {
+    End_Time
+    Start_Time
+    description
+    id
+    location
+  }
+}
+mutation CreatePost($input: CreatePostInput!) {
+  createPost(input: $input) {
+    blog {
+      id
+      name
+      posts {
+        items {
+          blog {
+            id
+            name
+          }
+          comments {
+            nextToken
+          }
+          id
+          title
+        }
+        nextToken
+      }
+    }
+    comments {
+      items {
+        content
+        id
+        post {
+          blog {
+            id
+            name
+          }
+          comments {
+            nextToken
+          }
+          id
+          title
+        }
+      }
+      nextToken
+    }
+    id
+    title
+  }
+}
+mutation CreateUser($input: CreateUserInput!) {
+  createUser(input: $input) {
+    clubs {
+      Description
+      Open_Invite
+      events {
+        items {
+          End_Time
+          Start_Time
+          description
+          id
+          location
+        }
+      }
+      id
+      name
+      users
+    }
+    id
+    password
+    username
+  }
+}
+mutation DeleteBlog($input: DeleteBlogInput!) {
+  deleteBlog(input: $input) {
+    id
+    name
+    posts {
+      items {
+        blog {
+          id
+          name
+          posts {
+            nextToken
+          }
+        }
+        comments {
+          items {
+            content
+            id
+          }
+          nextToken
+        }
+        id
+        title
+      }
+      nextToken
+    }
+  }
+}
+mutation DeleteClub($input: DeleteClubInput!) {
+  deleteClub(input: $input) {
+    Description
+    Open_Invite
+    events {
+      items {
+        End_Time
+        Start_Time
+        description
+        id
+        location
+      }
+    }
+    id
+    name
+    users
+  }
+}
+mutation DeleteComment($input: DeleteCommentInput!) {
+  deleteComment(input: $input) {
+    content
+    id
+    post {
+      blog {
+        id
+        name
+        posts {
+          items {
+            id
+            title
+          }
+          nextToken
+        }
+      }
+      comments {
+        items {
+          content
+          id
+          post {
+            id
+            title
+          }
+        }
+        nextToken
+      }
+      id
+      title
+    }
+  }
+}
+mutation DeleteEvent($input: DeleteEventInput!) {
+  deleteEvent(input: $input) {
+    End_Time
+    Start_Time
+    description
+    id
+    location
+  }
+}
+mutation DeletePost($input: DeletePostInput!) {
+  deletePost(input: $input) {
+    blog {
+      id
+      name
+      posts {
+        items {
+          blog {
+            id
+            name
+          }
+          comments {
+            nextToken
+          }
+          id
+          title
+        }
+        nextToken
+      }
+    }
+    comments {
+      items {
+        content
+        id
+        post {
+          blog {
+            id
+            name
+          }
+          comments {
+            nextToken
+          }
+          id
+          title
+        }
+      }
+      nextToken
+    }
+    id
+    title
+  }
+}
+mutation DeleteUser($input: DeleteUserInput!) {
+  deleteUser(input: $input) {
+    clubs {
+      Description
+      Open_Invite
+      events {
+        items {
+          End_Time
+          Start_Time
+          description
+          id
+          location
+        }
+      }
+      id
+      name
+      users
+    }
+    id
+    password
+    username
+  }
+}
+mutation UpdateBlog($input: UpdateBlogInput!) {
+  updateBlog(input: $input) {
+    id
+    name
+    posts {
+      items {
+        blog {
+          id
+          name
+          posts {
+            nextToken
+          }
+        }
+        comments {
+          items {
+            content
+            id
+          }
+          nextToken
+        }
+        id
+        title
+      }
+      nextToken
+    }
+  }
+}
+mutation UpdateClub($input: UpdateClubInput!) {
+  updateClub(input: $input) {
+    Description
+    Open_Invite
+    events {
+      items {
+        End_Time
+        Start_Time
+        description
+        id
+        location
+      }
+    }
+    id
+    name
+    users
+  }
+}
+mutation UpdateComment($input: UpdateCommentInput!) {
+  updateComment(input: $input) {
+    content
+    id
+    post {
+      blog {
+        id
+        name
+        posts {
+          items {
+            id
+            title
+          }
+          nextToken
+        }
+      }
+      comments {
+        items {
+          content
+          id
+          post {
+            id
+            title
+          }
+        }
+        nextToken
+      }
+      id
+      title
+    }
+  }
+}
+mutation UpdateEvent($input: UpdateEventInput!) {
+  updateEvent(input: $input) {
+    End_Time
+    Start_Time
+    description
+    id
+    location
+  }
+}
+mutation UpdatePost($input: UpdatePostInput!) {
+  updatePost(input: $input) {
+    blog {
+      id
+      name
+      posts {
+        items {
+          blog {
+            id
+            name
+          }
+          comments {
+            nextToken
+          }
+          id
+          title
+        }
+        nextToken
+      }
+    }
+    comments {
+      items {
+        content
+        id
+        post {
+          blog {
+            id
+            name
+          }
+          comments {
+            nextToken
+          }
+          id
+          title
+        }
+      }
+      nextToken
+    }
+    id
+    title
+  }
+}
+mutation UpdateUser($input: UpdateUserInput!) {
+  updateUser(input: $input) {
+    clubs {
+      Description
+      Open_Invite
+      events {
+        items {
+          End_Time
+          Start_Time
+          description
+          id
+          location
+        }
+      }
+      id
+      name
+      users
+    }
+    id
+    password
+    username
+  }
+}

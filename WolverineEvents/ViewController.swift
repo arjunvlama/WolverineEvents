@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AWSAppSync
 
 class LoginInfo {
     

@@ -1,0 +1,13 @@
+projects:
+  arjungraphapi:
+    schemaPath: graphql/schema.json
+    includes:
+      - graphql/**/*.graphql
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: swift
+        generatedFileName: API.swift
+        docsFilePath: graphql
+        maxDepth: 5

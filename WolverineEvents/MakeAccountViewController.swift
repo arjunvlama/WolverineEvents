@@ -10,9 +10,22 @@ import Foundation
 
 import UIKit
 
-class MakeAccountViewController: UIViewController, UITextFieldDelegate {
+import AWSAppSync
 
-   
+class MakeAccountViewController: UIViewController, UITextFieldDelegate {
+    var appSyncClient: AWSAppSyncClient?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.dismissKey()
+        self.UserNameSignUpField.delegate = self
+        self.PasswordSignUpField.delegate = self
+        self.ClubMembershipField.delegate = self
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appSyncClient = appDelegate.appSyncClient
+    }
+    
     @IBOutlet weak var UserNameSignUpField: UITextField!
     
     @IBOutlet weak var PasswordSignUpField: UITextField!
@@ -50,18 +63,36 @@ class MakeAccountViewController: UIViewController, UITextFieldDelegate {
         dbpassword.append(salt);
         dbpassword.append("%");
         dbpassword.append(finalhash);
-        let db = DBManager.init(databaseFilename: "clubdb.sql");
+        
+        runMutation(Username: username, Password: dbpassword);
+
+        //let db = DBManager.init(databaseFilename: "clubdb.sql");
         //let turnForeignKeyOn = "PRAGMA foreign_keys = ON";
-        let insertUsernamePassword = "INSERT INTO User VALUES('"
-            + username + "','" + dbpassword + "','" + club + "')";
+        //let insertUsernamePassword = "INSERT INTO User VALUES('"
+        //    + username + "','" + dbpassword + "','" + club + "')";
         //dump(insertUsernamePassword);
         //db!.executeQuery(turnForeignKeyOn);
-        db!.executeQuery(insertUsernamePassword);
+        //db!.executeQuery(insertUsernamePassword);
         //db!.executeQuery(insertClub);
-        let getInfo = "SELECT * FROM User";
-        let userdata = db!.loadData(fromDB: getInfo);
-        dump(userdata);
+        //let getInfo = "SELECT * FROM User";
+        //let userdata = db!.loadData(fromDB: getInfo);
+        //dump(userdata);
     }
+    
+    
+    func runMutation(Username: String, Password: String){
+        let mutationInput = CreateUserInput(password: Password, username: Username);
+        appSyncClient?.perform(mutation: CreateUserMutation(input: mutationInput)) { (result, error) in
+            if let error = error as? AWSAppSyncClientError {
+                print("Error occurred: \(error.localizedDescription )")
+            }
+            if let resultError = result?.errors {
+                print("Error saving the item on server: \(resultError)")
+                return
+            }
+        }
+    }
+    
     
     
     
@@ -79,16 +110,6 @@ class MakeAccountViewController: UIViewController, UITextFieldDelegate {
         return Data(hash)
     }
     
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.dismissKey()
-        self.UserNameSignUpField.delegate = self
-        self.PasswordSignUpField.delegate = self
-        self.ClubMembershipField.delegate = self
-        // Do any additional setup after loading the view.
-    }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)

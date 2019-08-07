@@ -1,0 +1,526 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateBlog {
+  onCreateBlog {
+    id
+    name
+    posts {
+      items {
+        blog {
+          id
+          name
+          posts {
+            nextToken
+          }
+        }
+        comments {
+          items {
+            content
+            id
+          }
+          nextToken
+        }
+        id
+        title
+      }
+      nextToken
+    }
+  }
+}
+subscription OnCreateClub(
+  $Description: String
+  $Open_Invite: Boolean
+  $id: ID
+  $name: String
+  $users: [String!]
+) {
+  onCreateClub(
+    Description: $Description
+    Open_Invite: $Open_Invite
+    id: $id
+    name: $name
+    users: $users
+  ) {
+    Description
+    Open_Invite
+    events {
+      items {
+        End_Time
+        Start_Time
+        description
+        id
+        location
+      }
+    }
+    id
+    name
+    users
+  }
+}
+subscription OnCreateComment {
+  onCreateComment {
+    content
+    id
+    post {
+      blog {
+        id
+        name
+        posts {
+          items {
+            id
+            title
+          }
+          nextToken
+        }
+      }
+      comments {
+        items {
+          content
+          id
+          post {
+            id
+            title
+          }
+        }
+        nextToken
+      }
+      id
+      title
+    }
+  }
+}
+subscription OnCreateEvent(
+  $End_Time: AWSDateTime
+  $Start_Time: AWSDateTime
+  $description: String
+  $id: ID
+  $location: String
+) {
+  onCreateEvent(
+    End_Time: $End_Time
+    Start_Time: $Start_Time
+    description: $description
+    id: $id
+    location: $location
+  ) {
+    End_Time
+    Start_Time
+    description
+    id
+    location
+  }
+}
+subscription OnCreatePost {
+  onCreatePost {
+    blog {
+      id
+      name
+      posts {
+        items {
+          blog {
+            id
+            name
+          }
+          comments {
+            nextToken
+          }
+          id
+          title
+        }
+        nextToken
+      }
+    }
+    comments {
+      items {
+        content
+        id
+        post {
+          blog {
+            id
+            name
+          }
+          comments {
+            nextToken
+          }
+          id
+          title
+        }
+      }
+      nextToken
+    }
+    id
+    title
+  }
+}
+subscription OnCreateUser($id: ID, $password: String, $username: String) {
+  onCreateUser(id: $id, password: $password, username: $username) {
+    clubs {
+      Description
+      Open_Invite
+      events {
+        items {
+          End_Time
+          Start_Time
+          description
+          id
+          location
+        }
+      }
+      id
+      name
+      users
+    }
+    id
+    password
+    username
+  }
+}
+subscription OnDeleteBlog {
+  onDeleteBlog {
+    id
+    name
+    posts {
+      items {
+        blog {
+          id
+          name
+          posts {
+            nextToken
+          }
+        }
+        comments {
+          items {
+            content
+            id
+          }
+          nextToken
+        }
+        id
+        title
+      }
+      nextToken
+    }
+  }
+}
+subscription OnDeleteClub(
+  $Description: String
+  $Open_Invite: Boolean
+  $id: ID
+  $name: String
+  $users: [String!]
+) {
+  onDeleteClub(
+    Description: $Description
+    Open_Invite: $Open_Invite
+    id: $id
+    name: $name
+    users: $users
+  ) {
+    Description
+    Open_Invite
+    events {
+      items {
+        End_Time
+        Start_Time
+        description
+        id
+        location
+      }
+    }
+    id
+    name
+    users
+  }
+}
+subscription OnDeleteComment {
+  onDeleteComment {
+    content
+    id
+    post {
+      blog {
+        id
+        name
+        posts {
+          items {
+            id
+            title
+          }
+          nextToken
+        }
+      }
+      comments {
+        items {
+          content
+          id
+          post {
+            id
+            title
+          }
+        }
+        nextToken
+      }
+      id
+      title
+    }
+  }
+}
+subscription OnDeleteEvent(
+  $End_Time: AWSDateTime
+  $Start_Time: AWSDateTime
+  $description: String
+  $id: ID
+  $location: String
+) {
+  onDeleteEvent(
+    End_Time: $End_Time
+    Start_Time: $Start_Time
+    description: $description
+    id: $id
+    location: $location
+  ) {
+    End_Time
+    Start_Time
+    description
+    id
+    location
+  }
+}
+subscription OnDeletePost {
+  onDeletePost {
+    blog {
+      id
+      name
+      posts {
+        items {
+          blog {
+            id
+            name
+          }
+          comments {
+            nextToken
+          }
+          id
+          title
+        }
+        nextToken
+      }
+    }
+    comments {
+      items {
+        content
+        id
+        post {
+          blog {
+            id
+            name
+          }
+          comments {
+            nextToken
+          }
+          id
+          title
+        }
+      }
+      nextToken
+    }
+    id
+    title
+  }
+}
+subscription OnDeleteUser($id: ID, $password: String, $username: String) {
+  onDeleteUser(id: $id, password: $password, username: $username) {
+    clubs {
+      Description
+      Open_Invite
+      events {
+        items {
+          End_Time
+          Start_Time
+          description
+          id
+          location
+        }
+      }
+      id
+      name
+      users
+    }
+    id
+    password
+    username
+  }
+}
+subscription OnUpdateBlog {
+  onUpdateBlog {
+    id
+    name
+    posts {
+      items {
+        blog {
+          id
+          name
+          posts {
+            nextToken
+          }
+        }
+        comments {
+          items {
+            content
+            id
+          }
+          nextToken
+        }
+        id
+        title
+      }
+      nextToken
+    }
+  }
+}
+subscription OnUpdateClub(
+  $Description: String
+  $Open_Invite: Boolean
+  $id: ID
+  $name: String
+  $users: [String!]
+) {
+  onUpdateClub(
+    Description: $Description
+    Open_Invite: $Open_Invite
+    id: $id
+    name: $name
+    users: $users
+  ) {
+    Description
+    Open_Invite
+    events {
+      items {
+        End_Time
+        Start_Time
+        description
+        id
+        location
+      }
+    }
+    id
+    name
+    users
+  }
+}
+subscription OnUpdateComment {
+  onUpdateComment {
+    content
+    id
+    post {
+      blog {
+        id
+        name
+        posts {
+          items {
+            id
+            title
+          }
+          nextToken
+        }
+      }
+      comments {
+        items {
+          content
+          id
+          post {
+            id
+            title
+          }
+        }
+        nextToken
+      }
+      id
+      title
+    }
+  }
+}
+subscription OnUpdateEvent(
+  $End_Time: AWSDateTime
+  $Start_Time: AWSDateTime
+  $description: String
+  $id: ID
+  $location: String
+) {
+  onUpdateEvent(
+    End_Time: $End_Time
+    Start_Time: $Start_Time
+    description: $description
+    id: $id
+    location: $location
+  ) {
+    End_Time
+    Start_Time
+    description
+    id
+    location
+  }
+}
+subscription OnUpdatePost {
+  onUpdatePost {
+    blog {
+      id
+      name
+      posts {
+        items {
+          blog {
+            id
+            name
+          }
+          comments {
+            nextToken
+          }
+          id
+          title
+        }
+        nextToken
+      }
+    }
+    comments {
+      items {
+        content
+        id
+        post {
+          blog {
+            id
+            name
+          }
+          comments {
+            nextToken
+          }
+          id
+          title
+        }
+      }
+      nextToken
+    }
+    id
+    title
+  }
+}
+subscription OnUpdateUser($id: ID, $password: String, $username: String) {
+  onUpdateUser(id: $id, password: $password, username: $username) {
+    clubs {
+      Description
+      Open_Invite
+      events {
+        items {
+          End_Time
+          Start_Time
+          description
+          id
+          location
+        }
+      }
+      id
+      name
+      users
+    }
+    id
+    password
+    username
+  }
+}

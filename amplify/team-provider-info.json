@@ -1,0 +1,14 @@
+{
+    "macos": {
+        "awscloudformation": {
+            "AuthRoleName": "wolverineevents-macos-20190804165830-authRole",
+            "UnauthRoleArn": "arn:aws:iam::619752078815:role/wolverineevents-macos-20190804165830-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::619752078815:role/wolverineevents-macos-20190804165830-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "wolverineevents-macos-20190804165830-deployment",
+            "UnauthRoleName": "wolverineevents-macos-20190804165830-unauthRole",
+            "StackName": "wolverineevents-macos-20190804165830",
+            "StackId": "arn:aws:cloudformation:us-west-2:619752078815:stack/wolverineevents-macos-20190804165830/c271a480-b713-11e9-b07a-063a4d9c7b3c"
+        }
+    }
+}
