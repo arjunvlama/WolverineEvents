@@ -1,180 +1,38 @@
 # this is an auto generated file. This will be overwritten
-query GetBlog($id: ID!) {
-  getBlog(id: $id) {
-    id
-    name
-    posts {
-      items {
-        blog {
-          id
-          name
-          posts {
-            nextToken
-          }
-        }
-        comments {
-          items {
-            content
-            id
-          }
-          nextToken
-        }
-        id
-        title
-      }
-      nextToken
-    }
-  }
-}
-query GetClub($id: ID!, $name: String!) {
-  getClub(id: $id, name: $name) {
+query GetClub($name: String!) {
+  getClub(name: $name) {
     Description
-    Open_Invite
     events {
-      items {
-        End_Time
-        Start_Time
-        description
+      End_Time
+      Start_Time
+      description
+      name
+      id
+      location
+      comments {
         id
-        location
+        text
+        user {
+          id
+          password
+          username
+          clubs
+        }
+        event {
+          End_Time
+          Start_Time
+          description
+          name
+          id
+          location
+        }
       }
     }
     id
     name
     users
-  }
-}
-query GetComment($id: ID!) {
-  getComment(id: $id) {
-    content
-    id
-    post {
-      blog {
-        id
-        name
-        posts {
-          items {
-            id
-            title
-          }
-          nextToken
-        }
-      }
-      comments {
-        items {
-          content
-          id
-          post {
-            id
-            title
-          }
-        }
-        nextToken
-      }
-      id
-      title
-    }
-  }
-}
-query GetEvent($id: ID!) {
-  getEvent(id: $id) {
-    End_Time
-    Start_Time
-    description
-    id
-    location
-  }
-}
-query GetPost($id: ID!) {
-  getPost(id: $id) {
-    blog {
-      id
-      name
-      posts {
-        items {
-          blog {
-            id
-            name
-          }
-          comments {
-            nextToken
-          }
-          id
-          title
-        }
-        nextToken
-      }
-    }
-    comments {
-      items {
-        content
-        id
-        post {
-          blog {
-            id
-            name
-          }
-          comments {
-            nextToken
-          }
-          id
-          title
-        }
-      }
-      nextToken
-    }
-    id
-    title
-  }
-}
-query GetUser($id: ID!) {
-  getUser(id: $id) {
-    clubs {
-      Description
-      Open_Invite
-      events {
-        items {
-          End_Time
-          Start_Time
-          description
-          id
-          location
-        }
-      }
-      id
-      name
-      users
-    }
-    id
-    password
-    username
-  }
-}
-query ListBlogs(
-  $filter: ModelBlogFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listBlogs(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      name
-      posts {
-        items {
-          blog {
-            id
-            name
-          }
-          comments {
-            nextToken
-          }
-          id
-          title
-        }
-        nextToken
-      }
-    }
-    nextToken
+    adminUsers
+    clubPassword
   }
 }
 query ListClubs(
@@ -185,52 +43,57 @@ query ListClubs(
   listClubs(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       Description
-      Open_Invite
       events {
-        items {
-          End_Time
-          Start_Time
-          description
+        End_Time
+        Start_Time
+        description
+        name
+        id
+        location
+        comments {
           id
-          location
+          text
         }
       }
       id
       name
       users
+      adminUsers
+      clubPassword
     }
     nextToken
   }
 }
-query ListComments(
-  $filter: ModelCommentFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      content
+query GetEvent($id: ID!) {
+  getEvent(id: $id) {
+    End_Time
+    Start_Time
+    description
+    name
+    id
+    location
+    comments {
       id
-      post {
-        blog {
-          id
-          name
-          posts {
-            nextToken
-          }
-        }
-        comments {
-          items {
-            content
-            id
-          }
-          nextToken
-        }
+      text
+      user {
         id
-        title
+        password
+        username
+        clubs
+      }
+      event {
+        End_Time
+        Start_Time
+        description
+        name
+        id
+        location
+        comments {
+          id
+          text
+        }
       }
     }
-    nextToken
   }
 }
 query ListEvents(
@@ -243,45 +106,37 @@ query ListEvents(
       End_Time
       Start_Time
       description
+      name
       id
       location
+      comments {
+        id
+        text
+        user {
+          id
+          password
+          username
+          clubs
+        }
+        event {
+          End_Time
+          Start_Time
+          description
+          name
+          id
+          location
+        }
+      }
     }
     nextToken
   }
 }
-query ListPosts(
-  $filter: ModelPostFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      blog {
-        id
-        name
-        posts {
-          items {
-            id
-            title
-          }
-          nextToken
-        }
-      }
-      comments {
-        items {
-          content
-          id
-          post {
-            id
-            title
-          }
-        }
-        nextToken
-      }
-      id
-      title
-    }
-    nextToken
+query GetUser($username: String!) {
+  getUser(username: $username) {
+    id
+    password
+    username
+    clubs
   }
 }
 query ListUsers(
@@ -291,25 +146,10 @@ query ListUsers(
 ) {
   listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
-      clubs {
-        Description
-        Open_Invite
-        events {
-          items {
-            End_Time
-            Start_Time
-            description
-            id
-            location
-          }
-        }
-        id
-        name
-        users
-      }
       id
       password
       username
+      clubs
     }
     nextToken
   }

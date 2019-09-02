@@ -13,10 +13,11 @@ class LoginInfo {
     
     var isLoggedIn:Bool = false
     static let shareInstance = LoginInfo()
+    var username:String = "";
+    var clubs:[String] = [];
     
     init() {}
 }
-
 
 extension UIViewController {
     func dismissKey()
@@ -51,7 +52,17 @@ class ViewController: UIViewController {
             
         }*/
     }
-
+    @IBAction func RegisterClubButtonPressed(_ sender: Any) {
+        if (LoginInfo.shareInstance.isLoggedIn == false) {
+            performSegue(withIdentifier: "EventtoLogin", sender: nil)
+        }
+        else {
+            
+        }
+        
+        
+    }
+    
     @IBAction func CreateEventButton(_ sender: UIButton) {
         if (LoginInfo.shareInstance.isLoggedIn == false) {
             performSegue(withIdentifier: "EventtoLogin", sender: nil)

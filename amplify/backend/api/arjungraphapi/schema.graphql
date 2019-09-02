@@ -1,22 +1,16 @@
-schema {
+﻿schema {
   query: Query
   mutation: Mutation
   subscription: Subscription
 }
 
-type Blog {
-  id: ID!
-  name: String!
-  posts(filter: ModelPostFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelPostConnection
-}
-
-type Club {
+type Club @model {
   Description: String
   Open_Invite: Boolean!
-  events(End_Time: AWSDateTime, Start_Time: AWSDateTime, description: String, id: ID, location: String): ModelEventConnection
+  events: [Event] @connection(name : "Event")
   id: ID!
   name: String!
-  users: [String!]
+  users: [User] @connection(name : "User")
 }
 
 type ClubConnection {
@@ -25,17 +19,20 @@ type ClubConnection {
 }
 
 type Comment {
-  content: String
+  event: Event!
   id: ID!
-  post: Post
+  text: String!
+  user: User!
 }
 
 type Event {
   End_Time: AWSDateTime!
   Start_Time: AWSDateTime!
+  comments: [Comment]
   description: String
   id: ID!
   location: String!
+  name: String!
 }
 
 type EventConnection {
@@ -43,95 +40,41 @@ type EventConnection {
   nextToken: String
 }
 
-type ModelBlogConnection {
-  items: [Blog]
-  nextToken: String
-}
-
-type ModelClubConnection {
-  items: [Club]
-}
-
-type ModelCommentConnection {
-  items: [Comment]
-  nextToken: String
-}
-
-type ModelEventConnection {
-  items: [Event]
-}
-
-type ModelPostConnection {
-  items: [Post]
-  nextToken: String
-}
-
 type Mutation {
-  createBlog(input: CreateBlogInput!): Blog
   createClub(input: CreateClubInput!): Club
-  createComment(input: CreateCommentInput!): Comment
   createEvent(input: CreateEventInput!): Event
-  createPost(input: CreatePostInput!): Post
   createUser(input: CreateUserInput!): User
-  deleteBlog(input: DeleteBlogInput!): Blog
   deleteClub(input: DeleteClubInput!): Club
-  deleteComment(input: DeleteCommentInput!): Comment
   deleteEvent(input: DeleteEventInput!): Event
-  deletePost(input: DeletePostInput!): Post
   deleteUser(input: DeleteUserInput!): User
-  updateBlog(input: UpdateBlogInput!): Blog
   updateClub(input: UpdateClubInput!): Club
-  updateComment(input: UpdateCommentInput!): Comment
   updateEvent(input: UpdateEventInput!): Event
-  updatePost(input: UpdatePostInput!): Post
   updateUser(input: UpdateUserInput!): User
 }
 
-type Post {
-  blog: Blog
-  comments(filter: ModelCommentFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelCommentConnection
-  id: ID!
-  title: String!
-}
-
 type Query {
-  getBlog(id: ID!): Blog
   getClub(id: ID!, name: String!): Club
-  getComment(id: ID!): Comment
-  getEvent(id: ID!): Event
-  getPost(id: ID!): Post
-  getUser(id: ID!): User
-  listBlogs(filter: ModelBlogFilterInput, limit: Int, nextToken: String): ModelBlogConnection
+  getEvent(id: ID!, name: String!): Event
+  getUser(id: ID!, username: String!): User
   listClubs(filter: TableClubFilterInput, limit: Int, nextToken: String): ClubConnection
-  listComments(filter: ModelCommentFilterInput, limit: Int, nextToken: String): ModelCommentConnection
   listEvents(filter: TableEventFilterInput, limit: Int, nextToken: String): EventConnection
-  listPosts(filter: ModelPostFilterInput, limit: Int, nextToken: String): ModelPostConnection
   listUsers(filter: TableUserFilterInput, limit: Int, nextToken: String): UserConnection
 }
 
 type Subscription {
-  onCreateBlog: Blog @aws_subscribe(mutations : ["createBlog"])
-  onCreateClub(Description: String, Open_Invite: Boolean, id: ID, name: String, users: [String!]): Club @aws_subscribe(mutations : ["createClub"])
-  onCreateComment: Comment @aws_subscribe(mutations : ["createComment"])
-  onCreateEvent(End_Time: AWSDateTime, Start_Time: AWSDateTime, description: String, id: ID, location: String): Event @aws_subscribe(mutations : ["createEvent"])
-  onCreatePost: Post @aws_subscribe(mutations : ["createPost"])
+  onCreateClub(Description: String, Open_Invite: Boolean, id: ID, name: String): Club @aws_subscribe(mutations : ["createClub"])
+  onCreateEvent(End_Time: AWSDateTime, Start_Time: AWSDateTime, description: String, id: ID, name: String): Event @aws_subscribe(mutations : ["createEvent"])
   onCreateUser(id: ID, password: String, username: String): User @aws_subscribe(mutations : ["createUser"])
-  onDeleteBlog: Blog @aws_subscribe(mutations : ["deleteBlog"])
-  onDeleteClub(Description: String, Open_Invite: Boolean, id: ID, name: String, users: [String!]): Club @aws_subscribe(mutations : ["deleteClub"])
-  onDeleteComment: Comment @aws_subscribe(mutations : ["deleteComment"])
-  onDeleteEvent(End_Time: AWSDateTime, Start_Time: AWSDateTime, description: String, id: ID, location: String): Event @aws_subscribe(mutations : ["deleteEvent"])
-  onDeletePost: Post @aws_subscribe(mutations : ["deletePost"])
+  onDeleteClub(Description: String, Open_Invite: Boolean, id: ID, name: String): Club @aws_subscribe(mutations : ["deleteClub"])
+  onDeleteEvent(End_Time: AWSDateTime, Start_Time: AWSDateTime, description: String, id: ID, name: String): Event @aws_subscribe(mutations : ["deleteEvent"])
   onDeleteUser(id: ID, password: String, username: String): User @aws_subscribe(mutations : ["deleteUser"])
-  onUpdateBlog: Blog @aws_subscribe(mutations : ["updateBlog"])
-  onUpdateClub(Description: String, Open_Invite: Boolean, id: ID, name: String, users: [String!]): Club @aws_subscribe(mutations : ["updateClub"])
-  onUpdateComment: Comment @aws_subscribe(mutations : ["updateComment"])
-  onUpdateEvent(End_Time: AWSDateTime, Start_Time: AWSDateTime, description: String, id: ID, location: String): Event @aws_subscribe(mutations : ["updateEvent"])
-  onUpdatePost: Post @aws_subscribe(mutations : ["updatePost"])
+  onUpdateClub(Description: String, Open_Invite: Boolean, id: ID, name: String): Club @aws_subscribe(mutations : ["updateClub"])
+  onUpdateEvent(End_Time: AWSDateTime, Start_Time: AWSDateTime, description: String, id: ID, name: String): Event @aws_subscribe(mutations : ["updateEvent"])
   onUpdateUser(id: ID, password: String, username: String): User @aws_subscribe(mutations : ["updateUser"])
 }
 
-type User {
-  clubs: [Club]
+type User @model {
+  clubs: [Club] @connection(name : "Club")
   id: ID!
   password: String!
   username: String!
@@ -147,23 +90,10 @@ enum ModelSortDirection {
   DESC
 }
 
-input CreateBlogInput {
-  id: ID
-  name: String!
-}
-
 input CreateClubInput {
   Description: String
   Open_Invite: Boolean!
-  id: ID!
   name: String!
-  users: [String!]
-}
-
-input CreateCommentInput {
-  commentPostId: ID
-  content: String
-  id: ID
 }
 
 input CreateEventInput {
@@ -171,12 +101,7 @@ input CreateEventInput {
   Start_Time: AWSDateTime!
   description: String
   location: String!
-}
-
-input CreatePostInput {
-  id: ID
-  postBlogId: ID
-  title: String!
+  name: String!
 }
 
 input CreateUserInput {
@@ -184,66 +109,24 @@ input CreateUserInput {
   username: String!
 }
 
-input DeleteBlogInput {
-  id: ID
-}
-
 input DeleteClubInput {
   id: ID!
   name: String!
 }
 
-input DeleteCommentInput {
-  id: ID
-}
-
 input DeleteEventInput {
   id: ID!
-}
-
-input DeletePostInput {
-  id: ID
+  name: String!
 }
 
 input DeleteUserInput {
   id: ID!
-}
-
-input ModelBlogFilterInput {
-  and: [ModelBlogFilterInput]
-  id: ModelIDFilterInput
-  name: ModelStringFilterInput
-  not: ModelBlogFilterInput
-  or: [ModelBlogFilterInput]
+  username: String!
 }
 
 input ModelBooleanFilterInput {
   eq: Boolean
   ne: Boolean
-}
-
-input ModelClubInput {
-  Description: String
-  Open_Invite: Boolean!
-  id: ID!
-  name: String!
-  users: [String!]
-}
-
-input ModelCommentFilterInput {
-  and: [ModelCommentFilterInput]
-  content: ModelStringFilterInput
-  id: ModelIDFilterInput
-  not: ModelCommentFilterInput
-  or: [ModelCommentFilterInput]
-}
-
-input ModelEventInput {
-  End_Time: AWSDateTime!
-  Start_Time: AWSDateTime!
-  description: String
-  id: ID!
-  location: String!
 }
 
 input ModelFloatFilterInput {
@@ -283,14 +166,6 @@ input ModelIntFilterInput {
   notContains: Int
 }
 
-input ModelPostFilterInput {
-  and: [ModelPostFilterInput]
-  id: ModelIDFilterInput
-  not: ModelPostFilterInput
-  or: [ModelPostFilterInput]
-  title: ModelStringFilterInput
-}
-
 input ModelStringFilterInput {
   beginsWith: String
   between: [String]
@@ -314,7 +189,6 @@ input TableClubFilterInput {
   Open_Invite: TableBooleanFilterInput
   id: TableIDFilterInput
   name: TableStringFilterInput
-  users: TableStringFilterInput
 }
 
 input TableEventFilterInput {
@@ -323,6 +197,7 @@ input TableEventFilterInput {
   description: TableStringFilterInput
   id: TableIDFilterInput
   location: TableStringFilterInput
+  name: TableStringFilterInput
 }
 
 input TableFloatFilterInput {
@@ -381,23 +256,11 @@ input TableUserFilterInput {
   username: TableStringFilterInput
 }
 
-input UpdateBlogInput {
-  id: ID!
-  name: String
-}
-
 input UpdateClubInput {
   Description: String
   Open_Invite: Boolean
   id: ID!
   name: String!
-  users: [String!]
-}
-
-input UpdateCommentInput {
-  commentPostId: ID
-  content: String
-  id: ID!
 }
 
 input UpdateEventInput {
@@ -406,16 +269,11 @@ input UpdateEventInput {
   description: String
   id: ID!
   location: String
-}
-
-input UpdatePostInput {
-  id: ID!
-  postBlogId: ID
-  title: String
+  name: String!
 }
 
 input UpdateUserInput {
   id: ID!
   password: String
-  username: String
+  username: String!
 }

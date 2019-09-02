@@ -7,7 +7,7 @@ target 'WolverineEvents' do
 
   # Pods for WolverineEvents
 
-  pod 'AWSAppSync','~> 2.12.0' 
+  pod 'AWSAppSync','~> 2.14.0'
 
   target 'WolverineEventsTests' do
     inherit! :search_paths

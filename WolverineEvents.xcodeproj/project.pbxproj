@@ -11,17 +11,12 @@
 		59ABFF0555CFF1EB968ACDAA /* Pods_WolverineEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDB86A792A4404F61AF2F3B /* Pods_WolverineEvents.framework */; };
 		80A9BA0A9D2F63B87249A994 /* Pods_WolverineEventsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1DD56E5D85CDC0EEF7D7A8 /* Pods_WolverineEventsUITests.framework */; };
 		AA2DCBB422EECC3B00F20D44 /* clubdb.sql in Resources */ = {isa = PBXBuildFile; fileRef = AA2DCBB322EECC3A00F20D44 /* clubdb.sql */; };
-		AA5522E222F7B9800095EA1F /* subscriptions.graphql in Resources */ = {isa = PBXBuildFile; fileRef = AA5522DF22F7B9800095EA1F /* subscriptions.graphql */; };
-		AA5522E322F7B9800095EA1F /* mutations.graphql in Resources */ = {isa = PBXBuildFile; fileRef = AA5522E022F7B9800095EA1F /* mutations.graphql */; };
-		AA5522E422F7B9800095EA1F /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = AA5522E122F7B9800095EA1F /* schema.json */; };
-		AA5522E622F7B9E90095EA1F /* queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = AA5522E522F7B9E90095EA1F /* queries.graphql */; };
-		AA62E23822F7A99A003188C1 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = AA62E23722F7A99A003188C1 /* awsconfiguration.json */; };
-		AA62E23A22F7AF22003188C1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62E23922F7AF22003188C1 /* API.swift */; };
 		AA80542522D9DAE800B47B05 /* sampledb.sql in Resources */ = {isa = PBXBuildFile; fileRef = AA80542422D9DAE800B47B05 /* sampledb.sql */; };
 		AAA4652622E9818A00AC0340 /* MakeAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA4652522E9818A00AC0340 /* MakeAccountViewController.swift */; };
-		AAA85DBC22FA8A4B00E12EFA /* schema.graphql in Resources */ = {isa = PBXBuildFile; fileRef = AAA85DBB22FA8A4B00E12EFA /* schema.graphql */; };
 		AAB4475222F2C100001DE39C /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB4475122F2C100001DE39C /* CreateEventViewController.swift */; };
 		AADDA1C722E6DD32005B541D /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; fileRef = AADDA1C622E6DD32005B541D /* CryptoSwift */; };
+		AAE2E42E2300B531006B7C88 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = AAE2E42D2300B531006B7C88 /* awsconfiguration.json */; };
+		AAE2E4302300BE16006B7C88 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2E42F2300BE16006B7C88 /* API.swift */; };
 		AAECE6F922D44C06008F98FF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AAECE6F822D44C06008F98FF /* libsqlite3.tbd */; };
 		AAECE6FC22D45620008F98FF /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AAECE6FB22D45620008F98FF /* DBManager.m */; };
 		AAEFEC7022C3377E00344CCB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEFEC6F22C3377E00344CCB /* LoginViewController.swift */; };
@@ -104,19 +99,14 @@
 		9DF046C94744DB2587103380 /* Pods-WolverineEventsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WolverineEventsUITests.debug.xcconfig"; path = "Target Support Files/Pods-WolverineEventsUITests/Pods-WolverineEventsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA20666222E5919500A30D15 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = WolverineEvents/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
 		AA2DCBB322EECC3A00F20D44 /* clubdb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = clubdb.sql; sourceTree = "<group>"; };
-		AA5522DF22F7B9800095EA1F /* subscriptions.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = subscriptions.graphql; sourceTree = "<group>"; };
-		AA5522E022F7B9800095EA1F /* mutations.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mutations.graphql; sourceTree = "<group>"; };
-		AA5522E122F7B9800095EA1F /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
-		AA5522E522F7B9E90095EA1F /* queries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = queries.graphql; sourceTree = SOURCE_ROOT; };
-		AA62E23722F7A99A003188C1 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
-		AA62E23922F7AF22003188C1 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		AA80542422D9DAE800B47B05 /* sampledb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = sampledb.sql; sourceTree = "<group>"; };
 		AAA4652522E9818A00AC0340 /* MakeAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAccountViewController.swift; sourceTree = "<group>"; };
-		AAA85DBB22FA8A4B00E12EFA /* schema.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = schema.graphql; path = amplify/backend/api/arjungraphapi/schema.graphql; sourceTree = SOURCE_ROOT; };
 		AAB4475122F2C100001DE39C /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		AADDA1C222E6DAF4005B541D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = WolverineEvents/CryptoSwift/README.md; sourceTree = "<group>"; };
 		AADDA1C422E6DD24005B541D /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../CryptoSwift/config; sourceTree = "<group>"; };
 		AADDA1C622E6DD32005B541D /* CryptoSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CryptoSwift; path = ../CryptoSwift; sourceTree = "<group>"; };
+		AAE2E42D2300B531006B7C88 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		AAE2E42F2300BE16006B7C88 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		AAECE6F822D44C06008F98FF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		AAECE6FA22D45620008F98FF /* WolverineEvents-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WolverineEvents-Bridging-Header.h"; sourceTree = "<group>"; };
 		AAECE6FB22D45620008F98FF /* DBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
@@ -180,18 +170,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AA5522DE22F7B9800095EA1F /* graphql */ = {
-			isa = PBXGroup;
-			children = (
-				AA5522DF22F7B9800095EA1F /* subscriptions.graphql */,
-				AA5522E022F7B9800095EA1F /* mutations.graphql */,
-				AA5522E522F7B9E90095EA1F /* queries.graphql */,
-				AA5522E122F7B9800095EA1F /* schema.json */,
-				AAA85DBB22FA8A4B00E12EFA /* schema.graphql */,
-			);
-			path = graphql;
-			sourceTree = "<group>";
-		};
 		AAECE6F722D44C05008F98FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,9 +188,8 @@
 		AAF0364322BF4C92007D0CE2 = {
 			isa = PBXGroup;
 			children = (
-				AA62E23922F7AF22003188C1 /* API.swift */,
-				AA5522DE22F7B9800095EA1F /* graphql */,
-				AA62E23722F7A99A003188C1 /* awsconfiguration.json */,
+				AAE2E42F2300BE16006B7C88 /* API.swift */,
+				AAE2E42D2300B531006B7C88 /* awsconfiguration.json */,
 				AA2DCBB322EECC3A00F20D44 /* clubdb.sql */,
 				AAECE6FB22D45620008F98FF /* DBManager.m */,
 				AA80542422D9DAE800B47B05 /* sampledb.sql */,
@@ -454,16 +431,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA5522E622F7B9E90095EA1F /* queries.graphql in Resources */,
 				AAF0365A22BF4C96007D0CE2 /* LaunchScreen.storyboard in Resources */,
-				AA5522E422F7B9800095EA1F /* schema.json in Resources */,
 				AAF0365722BF4C96007D0CE2 /* Assets.xcassets in Resources */,
-				AA5522E322F7B9800095EA1F /* mutations.graphql in Resources */,
-				AA62E23822F7A99A003188C1 /* awsconfiguration.json in Resources */,
+				AAE2E42E2300B531006B7C88 /* awsconfiguration.json in Resources */,
 				AA80542522D9DAE800B47B05 /* sampledb.sql in Resources */,
-				AA5522E222F7B9800095EA1F /* subscriptions.graphql in Resources */,
 				AA2DCBB422EECC3B00F20D44 /* clubdb.sql in Resources */,
-				AAA85DBC22FA8A4B00E12EFA /* schema.graphql in Resources */,
 				AAF0365522BF4C92007D0CE2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -581,7 +553,7 @@
 				AAF0365222BF4C92007D0CE2 /* ViewController.swift in Sources */,
 				AAF0365022BF4C92007D0CE2 /* AppDelegate.swift in Sources */,
 				AAECE6FC22D45620008F98FF /* DBManager.m in Sources */,
-				AA62E23A22F7AF22003188C1 /* API.swift in Sources */,
+				AAE2E4302300BE16006B7C88 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
