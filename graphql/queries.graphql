@@ -1,4 +1,27 @@
 # this is an auto generated file. This will be overwritten
+query GetUser($username: String!) {
+  getUser(username: $username) {
+    id
+    password
+    username
+    clubs
+  }
+}
+query ListUsers(
+  $filter: TableUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      password
+      username
+      clubs
+    }
+    nextToken
+  }
+}
 query GetClub($name: String!) {
   getClub(name: $name) {
     Description
@@ -9,24 +32,6 @@ query GetClub($name: String!) {
       name
       id
       location
-      comments {
-        id
-        text
-        user {
-          id
-          password
-          username
-          clubs
-        }
-        event {
-          End_Time
-          Start_Time
-          description
-          name
-          id
-          location
-        }
-      }
     }
     id
     name
@@ -43,18 +48,6 @@ query ListClubs(
   listClubs(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       Description
-      events {
-        End_Time
-        Start_Time
-        description
-        name
-        id
-        location
-        comments {
-          id
-          text
-        }
-      }
       id
       name
       users
@@ -75,24 +68,6 @@ query GetEvent($id: ID!) {
     comments {
       id
       text
-      user {
-        id
-        password
-        username
-        clubs
-      }
-      event {
-        End_Time
-        Start_Time
-        description
-        name
-        id
-        location
-        comments {
-          id
-          text
-        }
-      }
     }
   }
 }
@@ -109,47 +84,6 @@ query ListEvents(
       name
       id
       location
-      comments {
-        id
-        text
-        user {
-          id
-          password
-          username
-          clubs
-        }
-        event {
-          End_Time
-          Start_Time
-          description
-          name
-          id
-          location
-        }
-      }
-    }
-    nextToken
-  }
-}
-query GetUser($username: String!) {
-  getUser(username: $username) {
-    id
-    password
-    username
-    clubs
-  }
-}
-query ListUsers(
-  $filter: TableUserFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      password
-      username
-      clubs
     }
     nextToken
   }

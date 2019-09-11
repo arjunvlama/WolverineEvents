@@ -1,5 +1,5 @@
 projects:
-  arjungraphapi-macos:
+  sample-api:
     schemaPath: graphql/schema.json
     includes:
       - graphql/**/*.graphql
@@ -10,5 +10,5 @@ projects:
         codeGenTarget: swift
         generatedFileName: API.swift
         docsFilePath: graphql
-        region: us-west-2
-        maxDepth: 4
+        region: us-east-2
+        maxDepth: 2

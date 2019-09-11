@@ -125,7 +125,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 if (hashToCheck.base64EncodedString(options:[]) == hash){
                     LoginInfo.shareInstance.isLoggedIn = true;
                     LoginInfo.shareInstance.username = Username;
-                    LoginInfo.shareInstance.clubs = clubs ?? [];
+                    LoginInfo.shareInstance.clubs = clubs as! [String] ?? [];
                 }
             }
         }

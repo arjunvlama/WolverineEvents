@@ -10,5 +10,17 @@
             "StackName": "wolverineevents-macos-20190811133952",
             "StackId": "arn:aws:cloudformation:us-west-2:619752078815:stack/wolverineevents-macos-20190811133952/2bfbf220-bc78-11e9-ba39-06825eacfe56"
         }
+    },
+    "macoseast": {
+        "awscloudformation": {
+            "AuthRoleName": "wolverineevents-macoseast-20190910224814-authRole",
+            "UnauthRoleArn": "arn:aws:iam::619752078815:role/wolverineevents-macoseast-20190910224814-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::619752078815:role/wolverineevents-macoseast-20190910224814-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "wolverineevents-macoseast-20190910224814-deployment",
+            "UnauthRoleName": "wolverineevents-macoseast-20190910224814-unauthRole",
+            "StackName": "wolverineevents-macoseast-20190910224814",
+            "StackId": "arn:aws:cloudformation:us-east-2:619752078815:stack/wolverineevents-macoseast-20190910224814/9a1aa890-d43e-11e9-b310-0a3121d24df0"
+        }
     }
 }

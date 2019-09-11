@@ -1,208 +1,4 @@
 # this is an auto generated file. This will be overwritten
-mutation CreateClub($input: CreateClubInput!) {
-  createClub(input: $input) {
-    Description
-    events {
-      End_Time
-      Start_Time
-      description
-      name
-      id
-      location
-      comments {
-        id
-        text
-        user {
-          id
-          password
-          username
-          clubs
-        }
-        event {
-          End_Time
-          Start_Time
-          description
-          name
-          id
-          location
-        }
-      }
-    }
-    id
-    name
-    users
-    adminUsers
-    clubPassword
-  }
-}
-mutation UpdateClub($input: UpdateClubInput!) {
-  updateClub(input: $input) {
-    Description
-    events {
-      End_Time
-      Start_Time
-      description
-      name
-      id
-      location
-      comments {
-        id
-        text
-        user {
-          id
-          password
-          username
-          clubs
-        }
-        event {
-          End_Time
-          Start_Time
-          description
-          name
-          id
-          location
-        }
-      }
-    }
-    id
-    name
-    users
-    adminUsers
-    clubPassword
-  }
-}
-mutation DeleteClub($input: DeleteClubInput!) {
-  deleteClub(input: $input) {
-    Description
-    events {
-      End_Time
-      Start_Time
-      description
-      name
-      id
-      location
-      comments {
-        id
-        text
-        user {
-          id
-          password
-          username
-          clubs
-        }
-        event {
-          End_Time
-          Start_Time
-          description
-          name
-          id
-          location
-        }
-      }
-    }
-    id
-    name
-    users
-    adminUsers
-    clubPassword
-  }
-}
-mutation CreateEvent($input: CreateEventInput!) {
-  createEvent(input: $input) {
-    End_Time
-    Start_Time
-    description
-    name
-    id
-    location
-    comments {
-      id
-      text
-      user {
-        id
-        password
-        username
-        clubs
-      }
-      event {
-        End_Time
-        Start_Time
-        description
-        name
-        id
-        location
-        comments {
-          id
-          text
-        }
-      }
-    }
-  }
-}
-mutation UpdateEvent($input: UpdateEventInput!) {
-  updateEvent(input: $input) {
-    End_Time
-    Start_Time
-    description
-    name
-    id
-    location
-    comments {
-      id
-      text
-      user {
-        id
-        password
-        username
-        clubs
-      }
-      event {
-        End_Time
-        Start_Time
-        description
-        name
-        id
-        location
-        comments {
-          id
-          text
-        }
-      }
-    }
-  }
-}
-mutation DeleteEvent($input: DeleteEventInput!) {
-  deleteEvent(input: $input) {
-    End_Time
-    Start_Time
-    description
-    name
-    id
-    location
-    comments {
-      id
-      text
-      user {
-        id
-        password
-        username
-        clubs
-      }
-      event {
-        End_Time
-        Start_Time
-        description
-        name
-        id
-        location
-        comments {
-          id
-          text
-        }
-      }
-    }
-  }
-}
 mutation CreateUser($input: CreateUserInput!) {
   createUser(input: $input) {
     id
@@ -227,8 +23,8 @@ mutation DeleteUser($input: DeleteUserInput!) {
     clubs
   }
 }
-mutation AddUsertoClub($input: addUsertoClubInput!) {
-  addUsertoClub(input: $input) {
+mutation CreateClub($input: CreateClubInput!) {
+  createClub(input: $input) {
     Description
     events {
       End_Time
@@ -237,29 +33,89 @@ mutation AddUsertoClub($input: addUsertoClubInput!) {
       name
       id
       location
-      comments {
-        id
-        text
-        user {
-          id
-          password
-          username
-          clubs
-        }
-        event {
-          End_Time
-          Start_Time
-          description
-          name
-          id
-          location
-        }
-      }
     }
     id
     name
     users
     adminUsers
     clubPassword
+  }
+}
+mutation UpdateClub($input: UpdateClubInput!) {
+  updateClub(input: $input) {
+    Description
+    events {
+      End_Time
+      Start_Time
+      description
+      name
+      id
+      location
+    }
+    id
+    name
+    users
+    adminUsers
+    clubPassword
+  }
+}
+mutation DeleteClub($input: DeleteClubInput!) {
+  deleteClub(input: $input) {
+    Description
+    events {
+      End_Time
+      Start_Time
+      description
+      name
+      id
+      location
+    }
+    id
+    name
+    users
+    adminUsers
+    clubPassword
+  }
+}
+mutation CreateEvent($input: CreateEventInput!) {
+  createEvent(input: $input) {
+    End_Time
+    Start_Time
+    description
+    name
+    id
+    location
+    comments {
+      id
+      text
+    }
+  }
+}
+mutation UpdateEvent($input: UpdateEventInput!) {
+  updateEvent(input: $input) {
+    End_Time
+    Start_Time
+    description
+    name
+    id
+    location
+    comments {
+      id
+      text
+    }
+  }
+}
+mutation DeleteEvent($input: DeleteEventInput!) {
+  deleteEvent(input: $input) {
+    End_Time
+    Start_Time
+    description
+    name
+    id
+    location
+    comments {
+      id
+      text
+    }
   }
 }
