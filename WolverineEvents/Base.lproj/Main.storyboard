@@ -105,18 +105,24 @@
                                     <action selector="RegisterClubButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xkG-wi-nxy"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Re-nd-dUI">
+                                <rect key="frame" x="20" y="116" width="374" height="746"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="Events_View" destination="5Re-nd-dUI" id="cbR-Pq-a7z"/>
                         <outlet property="PostEventButton" destination="TAf-Gb-N0e" id="bS0-GY-HcV"/>
                         <segue destination="e8j-8t-0re" kind="show" identifier="EventtoCreate" id="5Dz-Ku-IV0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1149" y="90"/>
+            <point key="canvasLocation" x="1147.8260869565217" y="89.732142857142847"/>
         </scene>
         <!--Create Event View Controller-->
         <scene sceneID="fNE-dz-Sue">
@@ -322,6 +328,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ENb-8c-of0"/>
+        <segue reference="QdD-Uf-W6S"/>
     </inferredMetricsTieBreakers>
 </document>
