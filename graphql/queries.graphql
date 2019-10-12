@@ -32,6 +32,7 @@ query GetClub($name: String!) {
       name
       id
       location
+      club
     }
     id
     name
@@ -69,6 +70,7 @@ query GetEvent($id: ID!) {
       id
       text
     }
+    club
   }
 }
 query ListEvents(
@@ -84,6 +86,7 @@ query ListEvents(
       name
       id
       location
+      club
     }
     nextToken
   }

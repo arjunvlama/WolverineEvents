@@ -10,6 +10,7 @@
 		24F06CED0AC1F467867BFDF9 /* Pods_WolverineEventsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D11A29813540C9B4F404054 /* Pods_WolverineEventsTests.framework */; };
 		59ABFF0555CFF1EB968ACDAA /* Pods_WolverineEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDB86A792A4404F61AF2F3B /* Pods_WolverineEvents.framework */; };
 		80A9BA0A9D2F63B87249A994 /* Pods_WolverineEventsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1DD56E5D85CDC0EEF7D7A8 /* Pods_WolverineEventsUITests.framework */; };
+		AA13676D23490F7B008F7C7E /* EditEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA13676C23490F7B008F7C7E /* EditEventsViewController.swift */; };
 		AA2DCBB422EECC3B00F20D44 /* clubdb.sql in Resources */ = {isa = PBXBuildFile; fileRef = AA2DCBB322EECC3A00F20D44 /* clubdb.sql */; };
 		AA80542522D9DAE800B47B05 /* sampledb.sql in Resources */ = {isa = PBXBuildFile; fileRef = AA80542422D9DAE800B47B05 /* sampledb.sql */; };
 		AAA4652622E9818A00AC0340 /* MakeAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA4652522E9818A00AC0340 /* MakeAccountViewController.swift */; };
@@ -97,6 +98,7 @@
 		4BDB86A792A4404F61AF2F3B /* Pods_WolverineEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WolverineEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CDBE2D4BA9A822B069D0100 /* Pods-WolverineEvents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WolverineEvents.debug.xcconfig"; path = "Target Support Files/Pods-WolverineEvents/Pods-WolverineEvents.debug.xcconfig"; sourceTree = "<group>"; };
 		9DF046C94744DB2587103380 /* Pods-WolverineEventsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WolverineEventsUITests.debug.xcconfig"; path = "Target Support Files/Pods-WolverineEventsUITests/Pods-WolverineEventsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AA13676C23490F7B008F7C7E /* EditEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventsViewController.swift; sourceTree = "<group>"; };
 		AA20666222E5919500A30D15 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = WolverineEvents/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
 		AA2DCBB322EECC3A00F20D44 /* clubdb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = clubdb.sql; sourceTree = "<group>"; };
 		AA80542422D9DAE800B47B05 /* sampledb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = sampledb.sql; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				AAF0364F22BF4C92007D0CE2 /* AppDelegate.swift */,
 				AAF0365122BF4C92007D0CE2 /* ViewController.swift */,
 				AAEFEC6F22C3377E00344CCB /* LoginViewController.swift */,
+				AA13676C23490F7B008F7C7E /* EditEventsViewController.swift */,
 				AAF0365322BF4C92007D0CE2 /* Main.storyboard */,
 				AAF0365622BF4C96007D0CE2 /* Assets.xcassets */,
 				AAF0365822BF4C96007D0CE2 /* LaunchScreen.storyboard */,
@@ -550,6 +553,7 @@
 				AAA4652622E9818A00AC0340 /* MakeAccountViewController.swift in Sources */,
 				AAEFEC7022C3377E00344CCB /* LoginViewController.swift in Sources */,
 				AAB4475222F2C100001DE39C /* CreateEventViewController.swift in Sources */,
+				AA13676D23490F7B008F7C7E /* EditEventsViewController.swift in Sources */,
 				AAF0365222BF4C92007D0CE2 /* ViewController.swift in Sources */,
 				AAF0365022BF4C92007D0CE2 /* AppDelegate.swift in Sources */,
 				AAECE6FC22D45620008F98FF /* DBManager.m in Sources */,

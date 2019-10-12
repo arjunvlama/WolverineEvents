@@ -33,6 +33,7 @@ mutation CreateClub($input: CreateClubInput!) {
       name
       id
       location
+      club
     }
     id
     name
@@ -51,6 +52,7 @@ mutation UpdateClub($input: UpdateClubInput!) {
       name
       id
       location
+      club
     }
     id
     name
@@ -69,6 +71,7 @@ mutation DeleteClub($input: DeleteClubInput!) {
       name
       id
       location
+      club
     }
     id
     name
@@ -89,6 +92,7 @@ mutation CreateEvent($input: CreateEventInput!) {
       id
       text
     }
+    club
   }
 }
 mutation UpdateEvent($input: UpdateEventInput!) {
@@ -103,6 +107,7 @@ mutation UpdateEvent($input: UpdateEventInput!) {
       id
       text
     }
+    club
   }
 }
 mutation DeleteEvent($input: DeleteEventInput!) {
@@ -117,5 +122,6 @@ mutation DeleteEvent($input: DeleteEventInput!) {
       id
       text
     }
+    club
   }
 }

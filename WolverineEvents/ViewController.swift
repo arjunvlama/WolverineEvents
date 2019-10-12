@@ -37,6 +37,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var appSyncClient: AWSAppSyncClient?
     
+    var currentDate = Date();
+    
+    var currentTime:String = "";
     var currentHour = 0;
     var currentMinute = 0;
     var currentDay = 0;
@@ -52,13 +55,63 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return events_by_hour.count;
     }
     
+    func tableView(_ tableView: UITableView,
+                            titleForHeaderInSection section: Int) -> String? {
+      
+        
+        let calendar = Calendar.current
+        let tf = DateFormatter();
+        tf.dateFormat = "hh:mm a";
+        tf.timeZone = TimeZone(secondsFromGMT: TimeZone.current.secondsFromGMT());
+        let hourOfInterest = calendar.date(byAdding: .hour, value: section, to: currentDate)!;
+        let hourString = tf.string(from: hourOfInterest);
+        
+        
+        return hourString;
+        
+    }
+    
+    /*override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        var numRows = 0;
+        
+        let heightOfVisibleTableViewArea = Events_View.bounds.height - topLayoutGuide.length - bottomLayoutGuide.length;
+        
+        for section in 0...events_by_hour.count - 1 {
+            numRows += (events_by_hour[section] as? [ListEventsQuery.Data.ListEvent.Item?])?.count ?? 0;
+        }
+        
+        Events_View.rowHeight = heightOfVisibleTableViewArea / CGFloat(numRows);
+    }*/
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        /*let entry = (events_by_hour[section] as? [ListEventsQuery.Data.ListEvent.Item?])?.count ?? 0;
+        
+        if (entry == 0) {
+            return  1;
+        }*/
         
         return (events_by_hour[section] as? [ListEventsQuery.Data.ListEvent.Item?])?.count ?? 0;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell();
+        var cell:UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as? UITableViewCell;
+        if (cell == nil) {
+            cell = UITableViewCell(style: .value1, reuseIdentifier: "cellIdentifier")
+        }
+        
+        cell?.textLabel?.text = (events_by_hour[indexPath.section] as? [ListEventsQuery.Data.ListEvent.Item?])?[indexPath.row]?.name ?? "";
+        
+        cell?.detailTextLabel?.text = (events_by_hour[indexPath.section] as? [ListEventsQuery.Data.ListEvent.Item?])?[indexPath.row]?.location ?? "";
+        
+        /*print(indexPath.section);
+        print(events_by_hour);
+        print(indexPath.row);*/
+        
+        return cell!;
     }
     
 
@@ -79,6 +132,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print(currentDateTime);
     }
     
+    let dispatchGroup = DispatchGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,6 +152,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         date = calendar.date(bySetting: .minute, value: 0, of: date)!;
         date = calendar.date(bySetting: .second, value: 0, of: date)!;
         
+        Events_View.separatorStyle = .none;
+        
+        Events_View.delegate = self;
+        Events_View.dataSource = self;
+        
+        date = calendar.date(byAdding: .hour, value: -1, to: date)!;
+        
+        currentDate = date;
         
         for n in 0...5 {
         
@@ -110,6 +172,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print(currentDateTime);
             print(filterAboveString);
             
+            dispatchGroup.enter();
+            
             appSyncClient?.fetch(query: ListEventsQuery(filter: TableEventFilterInput(startTime: TableStringFilterInput(between: [currentDateTime, filterAboveString] ))), cachePolicy: .fetchIgnoringCacheData) {
                 (result, error) in
                 if let error = error as? AWSAppSyncClientError {
@@ -119,15 +183,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     print("Error fetch the item on the server: \(resultError)")
                     return;
                 }
+                self.dispatchGroup.leave()
                 self.events_by_hour[n] = (result?.data?.listEvents?.items);
-                self.fetches_done += 1;
+                
             }
             
             date = calendar.date(byAdding: .hour, value: 1, to: date)!;
             
         }
         
-        print(self.events_by_hour);
+        dispatchGroup.notify(queue: .main) {
+            self.Events_View.reloadData();
+        }
+        
         /*if (LoginInfo.shareInstance.isLoggedIn == false) {
             shouldPerformSegue(withIdentifier: "EventtoLogin") {
                 return true;
@@ -141,11 +209,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }*/
         //while (self.fetches_done != 1) {};
         
-        print(self.events_by_hour);
-        print(self.fetches_done);
-        
-        Events_View.delegate = self;
-        Events_View.dataSource = self;
     }
     @IBAction func RegisterClubButtonPressed(_ sender: Any) {
         print(self.events_by_hour);

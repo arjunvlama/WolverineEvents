@@ -40,7 +40,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    let dispatchGroup = DispatchGroup()
     
+    var httpError = false;
     
     @IBOutlet weak var UsernameField: UITextField!
     
@@ -61,21 +63,37 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         ClubItems.clubnumbers = 1;
         ClubItems.clubpasswords = [""];
         getClubList()
+        
+        dispatchGroup.enter();
         // Do any additional setup after loading the view.
     }
     
     @IBAction func SignInButtonPressed(_ sender: Any) {
         let username: String = self.UsernameField.text ?? "";
         let password: String = self.PasswordField.text ?? "";
+        
         ValidateUser(Username: username, Password: password);
-        if (LoginInfo.shareInstance.isLoggedIn) {
-            self.performSegue(withIdentifier: "LogintoEvent", sender: nil)
+
+        dispatchGroup.notify(queue: .main) {
+            
+            if (LoginInfo.shareInstance.isLoggedIn == true) {
+                self.performSegue(withIdentifier: "LogintoEvent", sender: nil)
+            }
+            else if (self.httpError) {
+                let alert = UIAlertController(title: "Unable to connect to server", message: "Check internet connection", preferredStyle: .alert);
+                alert.addAction(UIAlertAction(title: "Alright", style: .default, handler: nil));
+                self.present(alert, animated: true);
+                
+            }
+            else {
+                let alert = UIAlertController(title: "Username or Password Incorrect", message: "Please re-enter login credentials", preferredStyle: .alert);
+                alert.addAction(UIAlertAction(title: "Alright", style: .default, handler: nil));
+                self.present(alert, animated: true);
+            }
+            
+            self.dispatchGroup.enter();
         }
-        else {
-            let alert = UIAlertController(title: "Username or Password Incorrect", message: "Please re-enter login credentials", preferredStyle: .alert);
-            alert.addAction(UIAlertAction(title: "Alright", style: .default, handler: nil));
-            self.present(alert, animated: true);
-        }
+        
     }
     
     func ValidateUser(Username: String, Password: String) {
@@ -96,13 +114,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             (result, error) in
             if let error = error as? AWSAppSyncClientError {
                 print("Error occurred: \(error.localizedDescription )")
+                self.httpError = true;
+                self.dispatchGroup.leave();
+                return
             }
             if let resultError = result?.errors {
                 print("Error fetch the item on the server: \(resultError)")
+                self.httpError = true;
+                self.dispatchGroup.leave();
                 return;
             }
             if(result?.data?.listUsers?.items?.isEmpty ?? false){
-                return;
+                self.dispatchGroup.leave()
             }
             else {
                 let rawpassword = result?.data?.listUsers?.items?[0]?.password;
@@ -127,36 +150,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     LoginInfo.shareInstance.username = Username;
                     LoginInfo.shareInstance.clubs = clubs as! [String] ?? [];
                 }
+                self.dispatchGroup.leave();
             }
         }
-        
-        /*let db = DBManager.init(databaseFilename: "clubdb.sql");
-        let storedPassword = db!.loadData(fromDB: "SELECT password FROM User WHERE username = '" + username + "'") as NSArray;*/
-        /*if (storedPassword == nil || storedPassword.count == 0) {
-            print("No User Exists");
-            let alert = UIAlertController(title: "Username or Password Incorrect", message: "Try Again", preferredStyle: .alert);
-            alert.addAction(UIAlertAction(title: "Alright", style: .default, handler: nil));
-            self.present(alert, animated: true);
-            return false;
-        }
-        let result = (storedPassword.object(at: 0) as AnyObject).object(at: 0) as! NSString;
-        
-        let substrings = result.components(separatedBy: "%");
-        
-        let salt = substrings[1];
-        let hash = substrings[2];
-        
-        let hashToCheck = sha256(data: (salt + hashedPassword).data(using: .utf8)!)
-        if (hashToCheck.base64EncodedString(options:[]) == hash) {
-            return true;
-        }
-        else {
-            print("Password Incorrect");
-            let alert = UIAlertController(title: "Username or Password Incorrect", message: "Try Again", preferredStyle: .alert);
-            alert.addAction(UIAlertAction(title: "Alright", style: .default, handler: nil));
-            self.present(alert, animated: true);
-            return false;
-        }*/
         
     }
     

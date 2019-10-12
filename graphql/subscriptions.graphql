@@ -75,6 +75,7 @@ subscription OnCreateClub(
       name
       id
       location
+      club
     }
     id
     name
@@ -105,6 +106,7 @@ subscription OnUpdateClub(
       name
       id
       location
+      club
     }
     id
     name
@@ -135,6 +137,7 @@ subscription OnDeleteClub(
       name
       id
       location
+      club
     }
     id
     name
@@ -167,6 +170,7 @@ subscription OnCreateEvent(
       id
       text
     }
+    club
   }
 }
 subscription OnUpdateEvent(
@@ -193,6 +197,7 @@ subscription OnUpdateEvent(
       id
       text
     }
+    club
   }
 }
 subscription OnDeleteEvent(
@@ -219,5 +224,6 @@ subscription OnDeleteEvent(
       id
       text
     }
+    club
   }
 }
