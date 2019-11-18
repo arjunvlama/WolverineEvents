@@ -20,6 +20,7 @@ class LoginInfo {
 }
 
 extension UIViewController {
+    
     func dismissKey()
     {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(UIViewController.dismissKeyboard))
@@ -138,6 +139,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         
         //getCurrentTime();
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

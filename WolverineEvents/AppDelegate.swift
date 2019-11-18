@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             print("Error initializing appsync client. \(error)")
         }
+        
         // other methods
         return true
     }

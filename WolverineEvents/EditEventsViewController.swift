@@ -23,6 +23,9 @@ class EditEventsViewController: UIViewController, UITextFieldDelegate {
         var description:String = "";
         var id:GraphQLID = "";
     }
+    @IBAction func backButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "editeventtocreateevent", sender: nil)
+    }
     
     var eventsStuff = EventsItems();
     
@@ -85,6 +88,9 @@ class EditEventsViewController: UIViewController, UITextFieldDelegate {
             alert.addAction(UIAlertAction(title: "Alright", style: .default, handler: nil));
             
             self.present(alert, animated: true);
+            
+            self.performSegue(withIdentifier: "editeventtocreateevent", sender: nil)
+            
         }
         
     }
